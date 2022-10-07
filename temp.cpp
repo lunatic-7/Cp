@@ -5,9 +5,19 @@ using namespace std;
 
 int main()
 {
-    int arr[] = {1,2,3,4,5,5,6};
-    int x = 5;
-    auto k = upper_bound(arr, arr + sizeof(arr)/sizeof(int), x);
-    cout << k;
+    string temp = "123";
+    int temp2[10];
+    
+    for (int i = 0; i < 3; i++)
+    {
+        temp2[i] = (int) temp[i] - 48;
+    }
+
+    for (int i = 0; i < 3; i++)
+    {
+        cout << temp2[i] << " ";
+    }
+    
+    
     return 0;
 }
