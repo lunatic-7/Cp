@@ -23,7 +23,8 @@ void findY(int tod, int size)
 {
     int maxTod[size];
     int temp;
-    int max = 0;
+
+    // cout << "Tod: " << tod << "\n";
 
     for (int i = 0; i < size; i++)
     {
@@ -31,8 +32,15 @@ void findY(int tod, int size)
         temp = floor(tod/pow(2,i + 1));
         maxTod[i] = tod ^ temp;;
     }
+
+    // for (int i = 0; i < size; i++)
+    // {
+    //     cout << maxTod[i] << " ";
+    // } 
+    // cout << "\n";
     
     // Finding maximum number
+    int max = maxTod[0];
     for (int i = 0; i < size; i++)
     {
         if (maxTod[i] > max)
