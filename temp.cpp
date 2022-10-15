@@ -5,13 +5,13 @@ using namespace std;
 
 int main()
 {
-    int a = 7;
-    int b = 4;
-    string s = to_string(a + b);
-    cout << s.length();
-    cout << typeid(s[0]).name();
-
-    cout << s[0];
-    cout << s[1];
+    
+    string a = "101";
+    for (int i = 0; i < 3; i++)
+    {
+        a += "01";
+    }
+    
+    cout << a;
     return 0;
 }
