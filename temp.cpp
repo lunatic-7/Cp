@@ -2,16 +2,11 @@
 
 using namespace std;
 #define ll long long
+#define wasif() ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 
 int main()
 {
+    wasif()
     
-    string a = "101";
-    for (int i = 0; i < 3; i++)
-    {
-        a += "01";
-    }
-    
-    cout << a;
     return 0;
 }
