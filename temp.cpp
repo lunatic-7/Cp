@@ -1,12 +1,14 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <algorithm>
 
 using namespace std;
-#define ll long long
-#define wasif() ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 
 int main()
 {
-    wasif()
-    
+    string s;
+    s = "zbdcdeedfz";
+    sort(s.begin(), s.end());
+
+    cout << s << "\n";
     return 0;
 }
