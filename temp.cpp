@@ -6,7 +6,7 @@ using namespace std;
 
 int main()
 {
-    wasif();
-    cout << 1/sqrt(2);
+    float a = 2, b = 1000;
+    cout << ceil(a / b);
     return 0;
 }
