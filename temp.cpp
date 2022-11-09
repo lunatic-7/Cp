@@ -6,7 +6,6 @@ using namespace std;
 
 int main()
 {
-    float a = 2, b = 1000;
-    cout << ceil(a / b);
+    cout << 13 % 1;
     return 0;
 }
