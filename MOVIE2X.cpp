@@ -6,6 +6,11 @@ using namespace std;
 
 int main()
 {
-    cout << 0 % 5;
+    wasif();
+    int x, y;
+    cin >> x >> y;
+
+    cout << x - y/2 << "\n";
+
     return 0;
 }

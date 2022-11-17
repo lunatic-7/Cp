@@ -4,8 +4,24 @@ using namespace std;
 #define ll long long
 #define wasif() ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 
+void car()
+{
+    double n;
+    cin >> n;
+
+    cout << ceil(n/4) << "\n";
+}
+
 int main()
 {
-    cout << 0 % 5;
+    wasif();
+    int T;
+    cin >> T;
+
+    while (T--)
+    {
+        car();
+    }
+    
     return 0;
 }

@@ -6,6 +6,10 @@ using namespace std;
 
 int main()
 {
-    cout << 0 % 5;
+    wasif();
+    int n;
+    cin >> n;
+
+    cout << n - 1 << "\n";
     return 0;
 }
