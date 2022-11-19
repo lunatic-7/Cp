@@ -6,6 +6,10 @@ using namespace std;
 
 int main()
 {
-    cout << -2 % 2;
+    wasif();
+    int n;
+    cin >> n;
+
+    cout << (n * n)/2 << "\n";
     return 0;
 }
