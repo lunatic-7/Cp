@@ -4,22 +4,19 @@ using namespace std;
 #define ll long long
 #define wasif() ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 
-void ab()
+void fact()
 {
-    double a, b;
-    cin >> a >> b;
-
-    double A = a + 2;
-    double chk = (b - A + 3)/3;
-
-    if (floor(chk) == chk)
+    ll n;
+    cin >> n;
+    ll count = 0;
+    
+    while (n >= 5)
     {
-        cout << "NO" << "\n";
+        n = n / 5;
+        count += n;
     }
-    else
-    {
-        cout << "YES" << "\n";
-    }
+
+    cout << count << "\n";
 }
 
 int main()
@@ -30,7 +27,7 @@ int main()
 
     while (T--)
     {
-        ab();
+        fact();
     }
     
     return 0;

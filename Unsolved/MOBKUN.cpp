@@ -1,24 +1,28 @@
+// UNSOLVED
+
 #include <bits/stdc++.h>
 
 using namespace std;
 #define ll long long
 #define wasif() ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 
-void ab()
+void mob()
 {
-    double a, b;
-    cin >> a >> b;
+    int n, m, k; 
+    ll x;
+    cin >> n >> m >> k >> x;
 
-    double A = a + 2;
-    double chk = (b - A + 3)/3;
+    int i = (n * (k - 1)) + n + m;
 
-    if (floor(chk) == chk)
+    x = x % i;
+
+    if ((x >= (i - (n + m - 1))) && (x <= i))
     {
-        cout << "NO" << "\n";
+        cout << "YES" << "\n";
     }
     else
     {
-        cout << "YES" << "\n";
+        cout << "NO" << "\n";    
     }
 }
 
@@ -30,7 +34,7 @@ int main()
 
     while (T--)
     {
-        ab();
+        mob();
     }
     
     return 0;
