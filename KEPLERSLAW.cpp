@@ -4,22 +4,18 @@ using namespace std;
 #define ll long long
 #define wasif() ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 
-void e2()
+void kepler()
 {
-    ll a, b;
-    cin >> a >> b;
+    double t1, t2, r1, r2;
+    cin >> t1 >> t2 >> r1 >> r2;
 
-    if (a % 3 == 0 || b % 3 == 0)
+    if ((pow(t1, 2) / pow(r1, 3)) == (pow(t2, 2) / pow(r2, 3)))
     {
-        cout << 0 << "\n";
-    }
-    else if (abs(a - b) % 3 == 0)
-    {
-        cout << 1 << "\n";
+        cout << "YES" << "\n";
     }
     else
     {
-        cout << 2 << "\n";
+        cout << "NO" << "\n";
     }
 }
 
@@ -31,7 +27,7 @@ int main()
 
     while (T--)
     {
-        e2();
+        kepler();
     }
     
     return 0;

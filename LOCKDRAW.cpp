@@ -4,22 +4,18 @@ using namespace std;
 #define ll long long
 #define wasif() ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 
-void e2()
+void asan()
 {
-    ll a, b;
-    cin >> a >> b;
+    int a, b, c;
+    cin >> a >> b >> c;
 
-    if (a % 3 == 0 || b % 3 == 0)
+    if (a + b == c || a + c == b || b + c == a)
     {
-        cout << 0 << "\n";
-    }
-    else if (abs(a - b) % 3 == 0)
-    {
-        cout << 1 << "\n";
+        cout << "YES" << "\n";
     }
     else
     {
-        cout << 2 << "\n";
+        cout << "NO" << "\n";
     }
 }
 
@@ -31,7 +27,7 @@ int main()
 
     while (T--)
     {
-        e2();
+        asan();
     }
     
     return 0;

@@ -4,23 +4,23 @@ using namespace std;
 #define ll long long
 #define wasif() ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 
-void e2()
+void ghar()
 {
-    ll a, b;
-    cin >> a >> b;
+    ll n, x;
+    cin >> n >> x;
+    ll arr[n];
+    ll ind = 0;
 
-    if (a % 3 == 0 || b % 3 == 0)
+    for (int i = 0; i < n; i++)
     {
-        cout << 0 << "\n";
+        cin >> arr[i];
+        if (arr[i] < x)
+        {
+            ind = i + 1;
+        }
     }
-    else if (abs(a - b) % 3 == 0)
-    {
-        cout << 1 << "\n";
-    }
-    else
-    {
-        cout << 2 << "\n";
-    }
+
+    cout << ind << "\n";
 }
 
 int main()
@@ -31,7 +31,7 @@ int main()
 
     while (T--)
     {
-        e2();
+        ghar();
     }
     
     return 0;
