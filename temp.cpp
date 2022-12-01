@@ -6,6 +6,6 @@ using namespace std;
 
 int main()
 {
-    cout << -2 % 2;
+    cout << pow(1 - 2, 2);
     return 0;
 }
