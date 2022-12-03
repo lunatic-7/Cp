@@ -4,25 +4,29 @@ using namespace std;
 #define ll long long
 #define wasif() ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 
-void stri()
+void score()
 {
-    ll n;
+    int n;
     cin >> n;
-    string a, b;
-    cin >> a >> b;
-    set<ll> s;
-    int count = 0;
+    int p, s;
+    map<int, int> m;
+    int sc = 0;
 
-    for (int i = 0; i < b.size(); i++)
+    for (int i = 0; i < n; i++)
     {
-        if (b[i] != a[i] && s.count(b[i]) == 0)
+        cin >> p >> s;
+        if (p < 9 && s > m[p])
         {
-            count++;
-            s.insert(b[i]);
+            m[p] = s;
         }
     }
     
-    cout << count << "\n";
+    for (auto x : m)
+    {
+        sc += x.second;
+    }
+
+    cout << sc << "\n";
 }
 
 int main()
@@ -33,8 +37,8 @@ int main()
 
     while (T--)
     {
-        stri();
+        score();
     }
-     
+    
     return 0;
 }

@@ -4,24 +4,23 @@ using namespace std;
 #define ll long long
 #define wasif() ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 
-void stri()
+void guitar()
 {
     ll n;
     cin >> n;
-    string a, b;
-    cin >> a >> b;
-    set<ll> s;
-    int count = 0;
+    ll arr[n];
+    ll count = 0;
 
-    for (int i = 0; i < b.size(); i++)
+    for (int i = 0; i < n; i++)
     {
-        if (b[i] != a[i] && s.count(b[i]) == 0)
-        {
-            count++;
-            s.insert(b[i]);
-        }
+        cin >> arr[i];
     }
     
+    for (int i = 0; i < n - 1; i++)
+    {
+        count += abs(arr[i + 1] - arr[i]) - 1;
+    }
+
     cout << count << "\n";
 }
 
@@ -33,8 +32,8 @@ int main()
 
     while (T--)
     {
-        stri();
+        guitar();
     }
-     
+    
     return 0;
 }
