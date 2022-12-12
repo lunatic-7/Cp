@@ -6,6 +6,8 @@
         "xstring": "cpp",
         "iostream": "cpp",
         "algorithm": "cpp",
-        "limits": "cpp"
+        "limits": "cpp",
+        "ios": "cpp",
+        "tuple": "cpp"
     }
 }
