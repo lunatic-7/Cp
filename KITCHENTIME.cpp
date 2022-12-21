@@ -1,16 +1,15 @@
-// PARTIALLY SOLVED
 #include <bits/stdc++.h>
 
 using namespace std;
 #define ll long long
 #define wasif() ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 
-void mano()
+void kit()
 {
-    double n;
-    cin >> n;
+    int x, y;
+    cin >> x >> y;
 
-    cout << ceil(n / 2) << "\n";
+    cout << y - x << "\n";
 }
 
 int main()
@@ -21,7 +20,7 @@ int main()
 
     while (T--)
     {
-        mano();
+        kit();
     }
     
     return 0;

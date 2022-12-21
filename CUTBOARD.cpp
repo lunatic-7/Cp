@@ -1,16 +1,19 @@
-// PARTIALLY SOLVED
 #include <bits/stdc++.h>
 
 using namespace std;
 #define ll long long
 #define wasif() ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 
-void mano()
+void chess()
 {
-    double n;
-    cin >> n;
+    int r, c;
+    cin >> r >> c;
 
-    cout << ceil(n / 2) << "\n";
+    int crows = (r + 1) - 4;
+    int cclms = (c + 1) - 2;
+    int tot = (crows * 2) + (cclms * 2) + (crows * (cclms - 2));
+
+    cout << tot << "\n";
 }
 
 int main()
@@ -21,7 +24,7 @@ int main()
 
     while (T--)
     {
-        mano();
+        chess();
     }
     
     return 0;
