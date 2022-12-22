@@ -1,13 +1,13 @@
 // UNSOLVED
-
 #include <bits/stdc++.h>
 
 using namespace std;
 #define ll long long
 #define wasif() ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 
-void l47()
+int main()
 {
+    wasif();
     int n, k;
     cin >> n >> k;
     string fromchk[n];
@@ -25,23 +25,26 @@ void l47()
         {
             cout << "Good" << "\n";
         }
-        
+        else
+        {
+            for (int i = 0; i < fromchk.size(); i++)
+            {
+                for (int j = 0; j < fromchk[i].size(); j++)
+                {
+                    cout << [i][j]
+                }
+                
+            }
+            
+        }
         
     }
-    
-    
-}
 
-int main()
-{
-    wasif();
-    int T;
-    cin >> T;
-
-    while (T--)
+    for (int i = 0; i < n; i++)
     {
-        l47();
+        cout << fromchk[i] << " ";
     }
+  
     
     return 0;
 }
