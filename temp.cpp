@@ -2,25 +2,29 @@
 
 using namespace std;
 #define ll long long
+#define mod 1000000007
 #define wasif() ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 
 int main()
 {
     wasif();
-    vector<int> myvector{ 1, 2, 3, 4, 5 };
-    vector<int>::iterator it1, it2;
-  
-    it1 = myvector.begin();
-    it2 = myvector.end() - 2;
-    // it2--;
-    // it2--;
-  
-    myvector.erase(it1, it2);
+    ll n;
+    cin >> n;
+    ll sum1 = 0, sum2 = 0;
 
-    for (int i = 0; i < myvector.size(); i++)
+    for (int i = n; i >= 1; i--)
     {
-        cout << myvector[i] << "\n";
+        if (sum1 < sum2)
+        {
+            sum1 += i;
+        }
+        else
+        {
+            sum2 += i;
+        }
     }
     
+    cout << abs(sum2 - sum1) << "\n";
+
     return 0;
 }

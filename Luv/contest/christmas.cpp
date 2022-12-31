@@ -35,7 +35,6 @@ void santa()
         }
         cout << "\n";
     }
-    
 }
 
 int main()
