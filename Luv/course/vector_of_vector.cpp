@@ -9,30 +9,33 @@ int main()
 {
     wasif();
     
+    // Making a vector of vectors
+    vector<vector<int>> v;
+
+    // Taking size of vector of vector
     int N;
     cin >> N;
-    // Making an array of vectors
-    vector<int> v[N];
-
-    // taking user inputs in array of vectors
+    // Taking user inputs in vector of vectors
     for (int i = 0; i < N; i++)
     {
-        // taking size of each vectors
+        // Taking size of each vector nested inside a vector
         int n;
         cin >> n;
+        // making a temporary vector to finally push it back in our main vector
+        vector<int> temp;
         for (int j = 0; j < n; j++)
         {
-            // taking user inputs in each vectors
             int x;
             cin >> x;
-            v[i].push_back(x);
+            temp.push_back(x);
         }
+        v.push_back(temp);
     }
 
-    // printing array of vectors
-    for (int i = 0; i < N; i++)
+    // Printing vector of vectors
+    for (int i = 0; i < v.size(); i++)
     {
-        // print size of each vector
+        // print size of each nested vector
         cout << "size: " << v[i].size() << "\n";
         for (int j = 0; j < v[i].size(); j++)
         {
@@ -40,6 +43,6 @@ int main()
         }
         cout << "\n";
     }
-
+    
     return 0;
 }
