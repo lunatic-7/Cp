@@ -18,7 +18,7 @@ int main()
     // Taking user inputs in vector of vectors
     for (int i = 0; i < N; i++)
     {
-        // Taking size of each vector nested inside a vector
+        // Taking size of each nested vector
         int n;
         cin >> n;
         // making a temporary vector to finally push it back in our main vector

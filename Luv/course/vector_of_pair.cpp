@@ -7,7 +7,6 @@ using namespace std;
 
 void printVec(vector<pair<int, int>> &v)
 {
-
     for (int i = 0; i < v.size(); i++)
     {   
         // printing vector of pairs

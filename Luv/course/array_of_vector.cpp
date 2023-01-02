@@ -20,9 +20,9 @@ int main()
         // taking size of each vectors
         int n;
         cin >> n;
+        // taking user inputs in each vectors
         for (int j = 0; j < n; j++)
         {
-            // taking user inputs in each vectors
             int x;
             cin >> x;
             v[i].push_back(x);
