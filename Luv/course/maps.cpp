@@ -33,13 +33,13 @@ int main()
     // Another way to insert value in a map
     m.insert({7, "mano"});
     
-    // If we try to add the same key, it will replace the previous key, map stores unique key only
+    // If we try to add the same key which already exists, it will replace the previous key
     m[9] = "temp";
 
     mapPrint(m);
 
-    // This is how we use find() function, find() takes a key and returns an iterator corresponding to it
-    // if there id no key corresponding to it it return end() iterator.  
+    // find() function takes a key and returns an iterator corresponding to it
+    // if there is no key corresponding to it it return end() iterator.  
     auto it = m.find(10);  // O(log(n));
     if (it == m.end())
     {
@@ -50,7 +50,7 @@ int main()
         cout << it->first << " " << it->second << "\n";
     }
 
-    // erase() function takes a key or it iterator and removes that key value pair if that exist;
+    // erase() function takes a key or it iterator and removes that key value pair if that exist.
     m.erase(2);
     mapPrint(m);
 
@@ -58,7 +58,27 @@ int main()
     m.clear();
     mapPrint(m);
 
-    // Note : Map stores unique key only, and in sorted manner according to their keys.
+    // Note : Map stores unique keys only, and are sorted according to their keys.
+
+    /*
+    ######## UNORDERED MAP #########
+
+    map works internally on trees (red black trees) and have complexity of O(log(n)).
+    whereas,
+    unordered_map works internally on Hash tables and have complexity of O(1), but it
+    doesn't store keys in sorted manner.
+    It's implementation is:
+    unordered_map<int, string> m;
+    rest of its functions and code is same like maps.
+
+    ######## MULTIMAP #########
+
+    they are not often used in CP. Their working is same as of maps. The difference
+    is just that they can store duplicate keys as well.
+    It's implementation is:
+    multimap<int, string> m;
+    rest of its functions and code is same like maps.
+    */
 
     return 0;
 }
