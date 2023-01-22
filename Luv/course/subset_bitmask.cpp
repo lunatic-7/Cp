@@ -12,14 +12,15 @@ using namespace std;
 // We will return a vector of vector here
 vector<vector<int>> subsets(vector<int> &nums)
 {
-    int n = nums.size();
+    int n = nums.size();  // 3
     int subset_ct = (1 << n);  // 2^n
     vector<vector<int>> gen_subset;  // We are going to return this subset
     for (int mask = 0; mask < subset_ct; mask++)
     {
         vector<int> subset;
         for (int i = 0; i < n; i++)
-        {
+        {   
+            // Checking if ith bit of mask is set
             if ((mask & (1 << i)) != 0)
             {
                 subset.PB(nums[i]);
