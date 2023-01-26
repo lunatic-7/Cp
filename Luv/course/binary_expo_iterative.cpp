@@ -2,7 +2,7 @@
 
 using namespace std;
 #define ll long long
-#define mod 1000000007
+#define M 1000000007
 #define PB push_back
 #define POB pop_back
 #define F first
@@ -16,9 +16,9 @@ ll binExpIter(int a, int b)
     {
         if (b & 1)  // Check for set bit
         {
-            ans = ans * a;
+            ans = (ans * a) % M;
         }
-        a = a * a;
+        a = (a * a) % M;
         b >>= 1;  // Right shifting b
     }
     // So what is happening here...
