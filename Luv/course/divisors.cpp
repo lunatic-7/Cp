@@ -10,7 +10,7 @@ using namespace std;
 #define wasif() ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 
 // Brute Force Approach to find divisors, divisors count and divisors sum
-// Time Complexity O(n);
+// Time Complexity O(n)
 void bruteDivisor(int n)
 {
     int cnt = 0, sum = 0;
@@ -27,7 +27,7 @@ void bruteDivisor(int n)
 }
 
 /*
-    But we can observer a pattern in divisors:
+    But we can observe a pattern in divisors:
     for n = 24
     1  ---> 24 / 1  == 24
     2  ---> 24 / 2  == 12
@@ -40,6 +40,8 @@ void bruteDivisor(int n)
     12
     24
 */
+
+// OPTIMIZED APPROACH
 
 // Square root method to find divisors, divisors count and divisors sum
 // It is faster than brute force as we have to iterate our loop till sqrt(n) only
