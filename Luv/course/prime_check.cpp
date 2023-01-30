@@ -30,8 +30,8 @@ bool primeChk(int n)
     return true;
 }
 
-// But we can observer a pattern here, just like in finding divisors, we could use
-// n till sqrt(n), here we can do the same, bacause if a number if divisible by 
+// But we can observe a pattern here, just like in finding divisors, we could use
+// n till sqrt(n), here we can do the same, bacause if a number is divisible by 
 // a number coming before sqrt(n), it will automatically be divisible by numbers
 // coming afterwards.
 // eg: for n = 36
@@ -39,9 +39,8 @@ bool primeChk(int n)
 // 3  -->  36 / 3 == 12
 // 4  -->  36 / 4 == 9
 // 6  -->  36 / 6 == 6
-// NOTE = The smallest prime number of a composite number is always prime.
 // Square Root Method to check prime
-// Time Complexity sqrt(n)
+// Time Complexity O(sqrt(n))
 bool sqrtPrimeChk(int n)
 {
     bool isPrime = true;

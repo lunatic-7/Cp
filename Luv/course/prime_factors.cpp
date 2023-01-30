@@ -15,10 +15,10 @@ int main()
     int n;
     cin >> n;
 
-    // Approach: First we have to find the smallest prime number of a given number,
-    // and the we keep on dividing that number with that prime number, until it 
-    // is no more divisible, now we have to find this new number's prime number,
-    // and follow the same process until we reach 1
+    // Approach: First we have to find the smallest prime number of a given n,
+    // and then we keep on dividing that n with that prime number, until it 
+    // is no more divisible, now we have to find this new n's prime number,
+    // and follow the same process until n becomes 1
     // Brute Force Approach 
     // Time Complexity O(n)
     vector<int> prime_fact_b;
@@ -38,10 +38,10 @@ int main()
     cout << "\n";
 
     // As in prime factorization, we always consider the smallest possible prime number
-    // which is divisor of n, so, we could use n till sqrt(n), bacause if a number if divisible by 
+    // which is divisor of n, so, we can use n till sqrt(n), bacause if a number is divisible by 
     // a number coming before sqrt(n), it will automatically be divisible by numbers coming afterwards.
     // This will work fine until we have n composite, but asa we get n a prime no, we have to apply,
-    // and if check, bc if n = 3, then sqrt(3) condition will not work.
+    // an if check, bc if n = 3, then sqrt(3) condition will not work.
     // Square Root Method for prime factorization
     // Time complexity O(sqrt(n))
     int m;
