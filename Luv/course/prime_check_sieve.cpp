@@ -54,6 +54,7 @@ int main()
         {
             for (int j = 2 * i; j < N; j += i)
             {
+                // Changing all multiples of i to false
                 isPrime[j] = false;
             }
         }
