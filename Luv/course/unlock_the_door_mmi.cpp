@@ -76,6 +76,8 @@ int main()
         ans = (ans * 1LL * binexp(den, M - 2)) % M;
         cout << ans << "\n";
     }
+
+    // TC: O(T * log(n) + N)
     
     return 0;
 }
