@@ -10,11 +10,6 @@ using namespace std;
 
 const int M = 1e9+7;
 
-bool cmp(int a, int b)
-{
-	return a > b;
-}
-
 int main()
 {
     wasif();
@@ -23,8 +18,8 @@ int main()
 
     while (T--)
     {
-    	int n, x;
-    	cin >> n >> x;
+    	int n, m, k;
+    	cin >> n >> m >> k;
     	int arr[n];
 
     	for (int i = 0; i < n; ++i)
@@ -32,8 +27,9 @@ int main()
     		cin >> arr[i];
     	}
 
-    	sort(arr, arr + n, cmp);
-    	cout << arr[x - 1] - 1 << "\n";
+    	if (count(arr, arr + n, 1) == n) cout << 100 << "\n";
+    	else if (count(arr, arr + m, 1) == m) cout << k << "\n";
+    	else cout << 0 << "\n";
     }
     return 0;
 }

@@ -1,3 +1,5 @@
+// UNSOLVED
+
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -10,11 +12,6 @@ using namespace std;
 
 const int M = 1e9+7;
 
-bool cmp(int a, int b)
-{
-	return a > b;
-}
-
 int main()
 {
     wasif();
@@ -23,17 +20,19 @@ int main()
 
     while (T--)
     {
-    	int n, x;
-    	cin >> n >> x;
-    	int arr[n];
+    	int n, k, s;
+    	cin >> n >> k >> s;
+    	vector<int> v;
 
-    	for (int i = 0; i < n; ++i)
+    	for (int i = 1; i <= n + k; ++i)
     	{
-    		cin >> arr[i];
+    		if (i & 1) v.PB(i); 		
     	}
 
-    	sort(arr, arr + n, cmp);
-    	cout << arr[x - 1] - 1 << "\n";
+    	for (int i = 0; i < v.size(); ++i)
+    	{
+    		v[i] * k
+    	}
     }
     return 0;
 }

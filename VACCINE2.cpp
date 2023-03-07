@@ -10,11 +10,6 @@ using namespace std;
 
 const int M = 1e9+7;
 
-bool cmp(int a, int b)
-{
-	return a > b;
-}
-
 int main()
 {
     wasif();
@@ -23,17 +18,19 @@ int main()
 
     while (T--)
     {
-    	int n, x;
-    	cin >> n >> x;
+    	int n, d;
+    	cin >> n >> d;
     	int arr[n];
 
+    	double risk = 0;
     	for (int i = 0; i < n; ++i)
     	{
     		cin >> arr[i];
+    		if (arr[i] >= 80 || arr[i] <= 9) risk++;
     	}
 
-    	sort(arr, arr + n, cmp);
-    	cout << arr[x - 1] - 1 << "\n";
+    	int days = ceil(risk / (double) d) + ceil((n - risk) / (double) d);
+    	cout << days << "\n";
     }
     return 0;
 }
