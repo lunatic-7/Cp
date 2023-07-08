@@ -21,6 +21,7 @@ int main()
 	    ll n, m, h;
 	    cin >> n >> m >> h;  // n = no. of participants, m = no. of problems, h = total time
 	    ll arr[n + 1][m + 1];
+	    vector<pair<ll,ll>> final;
 
 	    // storing values
 	    for (int i = 1; i <= n; ++i)
@@ -55,22 +56,31 @@ int main()
 	    		}
 	    	}
 
-	    	cout << i << " " << point << " " << penalty << "\n";
+	    	final.PB({point, penalty});
+
+
+	    	// cout << i << " " << point << " " << penalty << "\n";
 	    }
+	    // cout << "\n";
 
-	    cout << "\n";
+	    ll pos = 1;
+	    for (int i = 1; i < final.size(); ++i)
+	    {
+	    	if (final[0].first < final[i].first)
+	    	{
+	    		pos++;
+	    	}
 
-
-
-	    // Priniting stored values
-	    // for (int i = 1; i <= n; ++i)
-	    // {
-	    // 	for (int j = 1; j <= m; ++j)
-	    // 	{
-	    // 		cout << arr[i][j] << " ";
-	    // 	}
-	    // 	cout << "\n";
-	    // }
+	    	if (final[0].first <= final[i].first)
+	    	{
+		    	if (final[0].second > final[i].second)
+		    	{
+		    		pos++;
+		    	}
+	    	}
+	    }
+	    
+	    cout << pos << "\n";
     }
 
 
