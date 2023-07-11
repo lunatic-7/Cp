@@ -23,9 +23,10 @@ void dfs(int vertex, int par=0)
     {
         // Take action on child before entering the child node
         if(child == par) continue;  // skipping visited node (parent)
-
         depth[child] = depth[vertex] + 1;
+
         dfs(child, vertex);
+
         // Take action on child after exiting child node
         height[vertex] = max(height[vertex], height[child] + 1);
     }
