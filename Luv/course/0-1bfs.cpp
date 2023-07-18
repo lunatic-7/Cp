@@ -14,7 +14,7 @@ const int M = 1e9+7;
 const int N = 1e5+10;
 const int INF = 1e9+10;
 
-vector<pair<int, int>> g[N];  // Vector of pairs to store pir of node and its weight
+vector<pair<int, int>> g[N];  // Vector of pairs to store pair of node and its weight
 vector<int> lev(N, INF);  // level vector initialized with INF
 int n, m;  // vertices and edges 
 
