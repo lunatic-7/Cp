@@ -14,7 +14,7 @@ const int M = 1e9+7;
 int main()
 {
     wasif();
-    int T;
+    int T;\
     cin >> T;
 
     while (T--)
