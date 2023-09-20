@@ -27,7 +27,6 @@ const int M = 1e9+7;
 // Constraints:
 // 1 <= text1.length, text2.length <= 1000
 
-const int N = 1e5+10;
 string s1, s2;
 int dp[1005][1005];
 
