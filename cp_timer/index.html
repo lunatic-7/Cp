@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CP Timer</title>
+    <link rel="stylesheet" href="./css/style.css">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="./assets/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./assets/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./assets/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./assets/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./assets/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./assets/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./assets/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./assets/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="./assets/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./assets/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16x16.png">
+    <link rel="manifest" href="./assets/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="./assets/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <script src="https://kit.fontawesome.com/258973f2c5.js" crossorigin="anonymous"></script>
+
+    <!-- Add this script to load the worker -->
+    <script>
+        const timerWorker = new Worker('timer_worker.js');
+    </script>
+
+</head>
+
+<body>
+
+    <nav class="nav" id="navbar">
+        <img id="timer_logo" src="./assets/cp_timer.png" alt="cp timer">
+        <i title="Toogle dark mode" id="dark_mode" class="fa-solid fa-circle-half-stroke"></i>
+    </nav>
+    <div id="main_dabba">
+        <!-- Make a timer -->
+        <div id="timer">
+            <div id="timer_main_box">
+                <span id="timer_showcase">00:00</span>
+            </div>
+            <div id="timer_buttons">
+                <button id="stop" class="btn">Stop</button>
+            </div>
+        </div>
+
+        <div id="timer_container">
+            <div>
+                <button id="easy" class="timer_box">Easy</button>
+                <span class="time_showcase">10 minutes</span>
+            </div>
+            <div>
+                <button id="medium" class="timer_box">Medium</button>
+                <span class="time_showcase">15 minutes</span>
+            </div>
+            <div>
+                <button id="hard" class="timer_box">Hard</button>
+                <span class="time_showcase">20 minutes</span>
+            </div>
+        </div>
+
+        <!-- Alarm -->
+        <audio id="alarm" src="./assets/alarm.mp3" preload="auto"></audio>
+
+        <div id="link_tg">
+            <h3 id="link_head">Links</h3>
+            <div class="saved">
+                <input type="text" id="linkTitle" placeholder="title">
+                <input type="url" id="linkUrl" placeholder="url">
+                <button class="pro_btn"onclick="saveLink()"><i class="fa-solid fa-floppy-disk"></i></button>
+            </div>
+            <ul id="savedLinks" class="links">
+                Nothing...
+            </ul>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+
+    <script>
+
+        const easy = document.getElementById('easy');
+        const medium = document.getElementById('medium');
+        const hard = document.getElementById('hard');
+        const stop = document.getElementById('stop');
+        const dark = document.getElementById('dark_mode');
+
+        // Disabling buttons when timer is on
+        const disableButtons = () => {
+            easy.style.cursor = "not-allowed";
+            easy.disabled = true;
+            easy.style.opacity = "0.5";
+            medium.style.cursor = "not-allowed";
+            medium.disabled = true;
+            medium.style.opacity = "0.5";
+            hard.style.cursor = "not-allowed";
+            hard.disabled = true;
+            hard.style.opacity = "0.5";
+        }
+
+        // Alarm
+        function playAlarm() {
+            let alarm = document.getElementById("alarm");
+            alarm.play();
+        }
+
+        // Dark mode
+        let chk = 0;
+        dark.addEventListener('click', () => {
+
+            let body = document.getElementById("navbar");
+            let main_dabba = document.getElementById("main_dabba");
+            let timer = document.getElementById("timer");
+            let time_show = document.querySelectorAll(".time_showcase");
+
+            if (chk == 0) {
+                navbar.style.backgroundColor = "#292929";
+                navbar.style.color = "#f5f5f5";
+
+                main_dabba.style.backgroundColor = "#181818";
+                timer.style.color = "#f5f5f5";
+                time_show.forEach(time => {
+                    time.style.color = '#f5f5f5';
+                });
+
+                chk = 1;
+            }
+            else {
+                navbar.style.backgroundColor = "#fff";
+                navbar.style.color = "black";
+
+                main_dabba.style.backgroundColor = "#f5f5f5";
+                timer.style.color = "#333";
+                time_show.forEach(time => {
+                    time.style.color = '#777';
+                });
+
+                chk = 0;
+            }
+        })
+
+        // Starting Timer
+        easy.addEventListener('click', () => {
+            timerWorker.postMessage({ action: 'start', duration: 10 * 60 }); // Start with 10 minutes for easy mode
+            disableButtons();
+        });
+
+        medium.addEventListener('click', () => {
+            timerWorker.postMessage({ action: 'start', duration: 15 * 60 }); // Start with 15 minutes for medium mode
+            disableButtons();
+        });
+
+        hard.addEventListener('click', () => {
+            timerWorker.postMessage({ action: 'start', duration: 20 * 60 }); // Start with 20 minutes for hard mode
+            disableButtons();
+        });
+
+        stop.addEventListener('click', () => {
+            timerWorker.postMessage('stop'); // Stop the timer in the worker
+            location.reload();
+        });
+
+        // Handle messages from the worker
+        timerWorker.onmessage = function (event) {
+            if (event.data === "Time's up!") {
+                playAlarm();
+            }
+            document.getElementById("timer_showcase").innerHTML = event.data;
+        };
+    </script>
+
+
+</body>
+
+</html>
