@@ -69,18 +69,112 @@
         <!-- Alarm -->
         <audio id="alarm" src="./assets/alarm.mp3" preload="auto"></audio>
 
-        <div id="link_tg">
-            <h3 id="link_head">Links</h3>
-            <div class="saved">
-                <input type="text" id="linkTitle" placeholder="title">
-                <input type="url" id="linkUrl" placeholder="url">
-                <button class="pro_btn"onclick="saveLink()"><i class="fa-solid fa-floppy-disk"></i></button>
+        <div id="link_papa">
+            <div id="link_tg">
+                <h3 id="link_head">Links</h3>
+                <div class="saved">
+                    <input type="text" id="linkTitle" placeholder="title">
+                    <input type="url" id="linkUrl" placeholder="url">
+                    <button class="pro_btn" onclick="saveLink()"><i class="fa-solid fa-floppy-disk"></i></button>
+                </div>
+                <ul id="savedLinks" class="links">
+                    Nothing...
+                </ul>
             </div>
-            <ul id="savedLinks" class="links">
-                Nothing...
-            </ul>
+            <!-- PDF -->
+            <div id="pdf_tg">
+                <h3 id="link_head">PDFs</h3>
+                <!-- make list of a tags which will consist of pdf links -->
+                <ul id="pdf_l" class="links">
+                    <li>1. <a href="./assets/1_cp.pdf" target="_blank">Basics</a></li>
+                    <li>2. <a href="./assets/2_cp.pdf" target="_blank">Pass by Refrence</a></li>
+                    <li>3. <a href="./assets/3_cp.pdf" target="_blank">Time complexity</a></li>
+                    <li>4. <a href="./assets/4_cp.pdf" target="_blank">Modular Arithmatic</a></li>
+                    <li>5. <a href="./assets/5_cp.pdf" target="_blank">Pre-computation</a></li>
+                    <li>6. <a href="./assets/6_cp.pdf" target="_blank">Hashing</a></li>
+                    <li>7. <a href="./assets/7_cp.pdf" target="_blank">Pre-computation (1D)</a></li>
+                    <li>8. <a href="./assets/8_cp.pdf" target="_blank">Pre-computation (2D)</a></li>
+                    <li>9. <a href="./assets/9_cp.pdf" target="_blank">STL</a></li>
+                    <li>10. <a href="./assets/10_cp.pdf" target="_blank">Pair</a></li>
+                    <li>11. <a href="./assets/11_cp.pdf" target="_blank">Vector</a></li>
+                    <li>12. <a href="./assets/12_cp.pdf" target="_blank">Vector of Pairs</a></li>
+                    <li>13. <a href="./assets/13_cp.pdf" target="_blank">Array of Vectors</a></li>
+                    <li>14. <a href="./assets/14_cp.pdf" target="_blank">Vector of Vectors</a></li>
+                    <li>15. <a href="./assets/15_cp.pdf" target="_blank">Iterators</a></li>
+                    <li>16. <a href="./assets/16_cp.pdf" target="_blank">Iterators (short)</a></li>
+                    <li>17. <a href="./assets/17_cp.pdf" target="_blank">Maps</a></li>
+                    <li>18. <a href="./assets/18_cp.pdf" target="_blank">Unordered Map</a></li>
+                    <li>19. <a href="./assets/19_cp.pdf" target="_blank">Multimaps</a></li>
+                    <li>20. <a href="./assets/20_cp.pdf" target="_blank">Sets</a></li>
+                    <li>21. <a href="./assets/21_cp.pdf" target="_blank">Unordered Set</a></li>
+                    <li>22. <a href="./assets/22_cp.pdf" target="_blank">Multiset</a></li>
+                    <li>23. <a href="./assets/23_cp.pdf" target="_blank">Nesting</a></li>
+                    <li>24. <a href="./assets/24_cp.pdf" target="_blank">Stack</a></li>
+                    <li>25. <a href="./assets/25_cp.pdf" target="_blank">Queue</a></li>
+                    <li>26. <a href="./assets/26_cp.pdf" target="_blank">Inbuit sort function</a></li>
+                    <li>27. <a href="./assets/27_cp.pdf" target="_blank">Comparator</a></li>
+                    <li>28. <a href="./assets/28_cp.pdf" target="_blank">Lower & Upper bound</a></li>
+                    <li>29. <a href="./assets/29_cp.pdf" target="_blank">STL inbuit algorithms</a></li>
+                    <li>30. <a href="./assets/30_cp.pdf" target="_blank">STL algorithms & lambda functions</a></li>
+                    <li>31. <a href="./assets/31_cp.pdf" target="_blank">Advanced Recursion and Backtracking</a></li>
+                    <li>32. <a href="./assets/32_cp.pdf" target="_blank">N<sup>th</sup> root using Binary search</a></li>
+                    <li>33. <a href="./assets/33_cp.pdf" target="_blank">Binary numbers</a></li>
+                    <li>34. <a href="./assets/34_cp.pdf" target="_blank">Trick to find powers of 2</a></li>
+                    <li>35. <a href="./assets/35_cp.pdf" target="_blank">Terminologies in Binary numbers</a></li>
+                    <li>36. <a href="./assets/36_cp.pdf" target="_blank">Bit manipulation tricks</a></li>
+                    <li>37. <a href="./assets/37_cp.pdf" target="_blank">Odd / Even</a></li>
+                    <li>38. <a href="./assets/38_cp.pdf" target="_blank">Upper to lowercase (vice-versa)</a></li>
+                    <li>39. <a href="./assets/39_cp.pdf" target="_blank">Divide & mutiply by 2</a></li>
+                    <li>40. <a href="./assets/40_cp.pdf" target="_blank">MSB / LSB bit manipulations</a></li>
+                    <li>41. <a href="./assets/41_cp.pdf" target="_blank">Check if a no. is power of 2</a></li>
+                    <li>42. <a href="./assets/42_cp.pdf" target="_blank">XOR (^) Operator</a></li>
+                    <li>43. <a href="./assets/43_cp.pdf" target="_blank">Swapping 2 no. using XOR</a></li>
+                    <li>44. <a href="./assets/44_cp.pdf" target="_blank">Bit masking<</a>
+                    <li>45. <a href="./assets/45_cp.pdf" target="_blank">Subset generation using bitmasking</a></li>
+                    <li>46. <a href="./assets/46_cp.pdf" target="_blank">GCD & LCM</a></li>
+                    <li>47. <a href="./assets/47_cp.pdf" target="_blank">Binary exponentiation (recursive method)</a></li>
+                    <li>48. <a href="./assets/48_cp.pdf" target="_blank">Binary exponentiation (iterative method)</a></li>
+                    <li>49. <a href="./assets/49_cp.pdf" target="_blank">Large exponentiation using (binary multiplication)</a></li>
+                    <li>50. <a href="./assets/50_cp.pdf" target="_blank">Large exponentiation using ETF & Euler theorem</a></li>
+                    <li>51. <a href="./assets/51_cp.pdf" target="_blank">Large exponentiation using ETF & Euler (code)</a></li>
+                    <li>52. <a href="./assets/52_cp.pdf" target="_blank">Factors and Divisors</a></li>
+                    <li>53. <a href="./assets/53_cp.pdf" target="_blank">Prime check and Prime factorization</a></li>
+                    <li>54. <a href="./assets/54_cp.pdf" target="_blank">Sieve algorithm to find the prime no. optimally</a></li>
+                    <li>55. <a href="./assets/55_cp.pdf" target="_blank">Sieve Variations</a></li>
+                    <li>56. <a href="./assets/56_cp.pdf" target="_blank">Moduler Multiplicative Inverse (MMI)</a></li>
+                    <li>57. <a href="./assets/57_cp.pdf" target="_blank">Graphs / Trees Intro</a></li>
+                    <li>58. <a href="./assets/58_cp.pdf" target="_blank">All the tree / Graph Terminology</a></li>
+                    <li>59. <a href="./assets/59_cp.pdf" target="_blank">How to represent Trees / Graph in code</a></li>
+                    <li>60. <a href="./assets/60_cp.pdf" target="_blank">Depth First Search (DFS)</a></li>
+                    <li>61. <a href="./assets/61_cp.pdf" target="_blank">How to find connected components & Cycle in graph using DFS</a></li>
+                    <li>62. <a href="./assets/62_cp.pdf" target="_blank">DFS in Trees (height & depth)</a></li>
+                    <li>63. <a href="./assets/63_cp.pdf" target="_blank">Pre-computation using DFS</a></li>
+                    <li>64. <a href="./assets/64_cp.pdf" target="_blank">Diameter of a Tree</a></li>
+                    <li>65. <a href="./assets/65_cp.pdf" target="_blank">LCA of a Tree</a></li>
+                    <li>66. <a href="./assets/66_cp.pdf" target="_blank">Edge deletion question</a></li>
+                    <li>67. <a href="./assets/67_cp.pdf" target="_blank">Breadth First Search (BFS)</a></li>
+                    <li>68. <a href="./assets/68_cp.pdf" target="_blank">BFS (Shortest path question)</a></li>
+                    <li>69. <a href="./assets/69_cp.pdf" target="_blank">0-1 BFS</a></li>
+                    <li>70. <a href="./assets/70_cp.pdf" target="_blank">Multisource BFS</a></li>
+                    <li>71. <a href="./assets/71_cp.pdf" target="_blank">Dijkstra algorithm</a></li>
+                    <li>72. <a href="./assets/72_cp.pdf" target="_blank">Floyd warshall algorithm</a></li>
+                    <li>73. <a href="./assets/73_cp.pdf" target="_blank">Disjoint Set Union</a></li>
+                    <li>74. <a href="./assets/74_cp.pdf" target="_blank">Krukskal's algorithm</a></li>
+                    <li>75. <a href="./assets/75_cp.pdf" target="_blank">Dynamic Programming (Overview)</a></li>
+                    <li>76. <a href="./assets/76_cp.pdf" target="_blank">Introduction to DP</a></li>
+                    <li>77. <a href="./assets/77_cp.pdf" target="_blank">Frog 1 & 2</a></li>
+                    <li>78. <a href="./assets/78_cp.pdf" target="_blank">Longest increasing subsequence (LIS)</a></li>
+                    <li>79. <a href="./assets/79_cp.pdf" target="_blank">Coin change</a>
+                    <li>80. <a href="./assets/80_cp.pdf" target="_blank">Knapsack problem</a></li>
+                    <li>81. <a href="./assets/81_cp.pdf" target="_blank">0 / 1 Knapsack</a></li>
+                    <li>82. <a href="./assets/82_cp.pdf" target="_blank">Rod cutting</a></li>
+                    <li>83. <a href="./assets/83_cp.pdf" target="_blank">Subset sum</a></li>
+                    <li>84. <a href="./assets/84_cp.pdf" target="_blank">Longest common subsequence</a></li>
+                </ul>
+            </div>
         </div>
     </div>
+
 
     <script src="app.js"></script>
 

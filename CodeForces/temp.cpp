@@ -13,9 +13,8 @@ const int M = 1e9+7;
 int main()
 {
     wasif();
-    string s;
-    cin >> s;
+    int n = 3;
 
-    cout << "Hello " << s << "\n";
+    if (n & 1) cout << "YES" << "\n";
     return 0;
 }

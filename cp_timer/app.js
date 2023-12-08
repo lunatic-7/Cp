@@ -4,7 +4,7 @@ function saveLink() {
     var url = document.getElementById('linkUrl').value;
 
     if (title && url) {
-        fetch('https://xxxxxxx/api/links/save/', {
+        fetch('https://wasif.pythonanywhere.com/api/links/save/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -27,7 +27,7 @@ function saveLink() {
 
 // Function to delete a link using API
 function deleteLink(linkId) {
-    fetch(`https://xxxxxxxx/api/links/delete/${linkId}/`, {
+    fetch(`https://wasif.pythonanywhere.com/api/links/delete/${linkId}/`, {
         method: 'DELETE',
     })
     .then(response => {
@@ -42,7 +42,7 @@ function deleteLink(linkId) {
 
 // Function to display saved links from API
 function displaySavedLinks() {
-    fetch('https://xxxxxxxxx/api/links/')
+    fetch('https://wasif.pythonanywhere.com/api/links/')
         .then(response => response.json())
         .then(data => {
             var savedLinksList = document.getElementById('savedLinks');
