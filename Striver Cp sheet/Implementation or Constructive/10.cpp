@@ -1,4 +1,3 @@
-// UNSOLVED
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -10,24 +9,31 @@ using namespace std;
 #define wasif() ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 
 const int M = 1e9+7;
-int employee[2005];
 
 int main()
 {
     wasif();
-    int emp;
-    cin >> emp;
+    int n;
+    cin >> n;
+    vector<int> chk(n);
+    bool hard = false;
 
-    for (int i = 1; i <= emp; ++i)
+    for (int i = 0; i < n; ++i)
     {
-        cin >> employee[i];
+    	cin >> chk[i];
     }
 
-    for (int i = 1; i <= emp; ++i)
+    for (int i = 0; i < n; ++i)
     {
-        cout << employee[i] << "\n";
+    	if (chk[i] == 1)
+    	{
+    		hard = true;
+    		break;
+    	}
     }
-    
-    
+
+    if (hard) cout << "HARD" << "\n";
+    else cout << "EASY" << "\n";
+
     return 0;
 }
