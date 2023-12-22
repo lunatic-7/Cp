@@ -156,7 +156,7 @@
     display: flex;
     gap: 5rem;
     flex-direction: row;
-    padding: 2rem 0;
+    padding: 2rem 5rem;
 }
 
 #link_tg {
@@ -168,7 +168,6 @@
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
-    margin-left: 5%;
 }
 
 #link_head {
@@ -250,8 +249,12 @@
     #link_papa {
         flex-direction: column;
         align-items: center;
+        gap: 3rem;
     }
     #main_dabba {
         height: 100%;
+    }
+    #link_tg {
+        height: 350px
     }
 }
