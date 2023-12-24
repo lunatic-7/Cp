@@ -13,12 +13,24 @@ const int M = 1e9+7;
 int main()
 {
     wasif();
-    int k;
-    cin >> k;
+    int n;
+    cin >> n;
+    string s;
+    cin >> s;
 
-    cout << k << "\n";
-    int n = 3;
+    while (n > 0 && n % 7 != 0)
+    {
+    	n -= 4;
+    	s.PB('4');
+    }
 
-    if (n & 1) cout << "YES" << "\n";
+    while (n > 0 && n % 7 == 0)
+    {
+    	n -= 7;
+    	s.PB('7');
+    }
+
+    if (n == 0) cout << s << "\n";
+    else cout << -1 << "\n";
     return 0;
 }

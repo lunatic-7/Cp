@@ -18,6 +18,6 @@ function updateTimer() {
         self.postMessage(`${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`);
     } else {
         clearInterval(interval);
-        self.postMessage("Time's up!");
+        self.postMessage("Datt ja bhai!");
     }
 }

@@ -117,7 +117,8 @@
                     <li>29. <a href="./assets/29_cp.pdf" target="_blank">STL inbuit algorithms</a></li>
                     <li>30. <a href="./assets/30_cp.pdf" target="_blank">STL algorithms & lambda functions</a></li>
                     <li>31. <a href="./assets/31_cp.pdf" target="_blank">Advanced Recursion and Backtracking</a></li>
-                    <li>32. <a href="./assets/32_cp.pdf" target="_blank">N<sup>th</sup> root using Binary search</a></li>
+                    <li>32. <a href="./assets/32_cp.pdf" target="_blank">N<sup>th</sup> root using Binary search</a>
+                    </li>
                     <li>33. <a href="./assets/33_cp.pdf" target="_blank">Binary numbers</a></li>
                     <li>34. <a href="./assets/34_cp.pdf" target="_blank">Trick to find powers of 2</a></li>
                     <li>35. <a href="./assets/35_cp.pdf" target="_blank">Terminologies in Binary numbers</a></li>
@@ -129,24 +130,31 @@
                     <li>41. <a href="./assets/41_cp.pdf" target="_blank">Check if a no. is power of 2</a></li>
                     <li>42. <a href="./assets/42_cp.pdf" target="_blank">XOR (^) Operator</a></li>
                     <li>43. <a href="./assets/43_cp.pdf" target="_blank">Swapping 2 no. using XOR</a></li>
-                    <li>44. <a href="./assets/44_cp.pdf" target="_blank">Bit masking<</a>
+                    <li>44. <a href="./assets/44_cp.pdf" target="_blank">Bit masking<< /a>
                     <li>45. <a href="./assets/45_cp.pdf" target="_blank">Subset generation using bitmasking</a></li>
                     <li>46. <a href="./assets/46_cp.pdf" target="_blank">GCD & LCM</a></li>
-                    <li>47. <a href="./assets/47_cp.pdf" target="_blank">Binary exponentiation (recursive method)</a></li>
-                    <li>48. <a href="./assets/48_cp.pdf" target="_blank">Binary exponentiation (iterative method)</a></li>
-                    <li>49. <a href="./assets/49_cp.pdf" target="_blank">Large exponentiation using (binary multiplication)</a></li>
-                    <li>50. <a href="./assets/50_cp.pdf" target="_blank">Large exponentiation using ETF & Euler theorem</a></li>
-                    <li>51. <a href="./assets/51_cp.pdf" target="_blank">Large exponentiation using ETF & Euler (code)</a></li>
+                    <li>47. <a href="./assets/47_cp.pdf" target="_blank">Binary exponentiation (recursive method)</a>
+                    </li>
+                    <li>48. <a href="./assets/48_cp.pdf" target="_blank">Binary exponentiation (iterative method)</a>
+                    </li>
+                    <li>49. <a href="./assets/49_cp.pdf" target="_blank">Large exponentiation using (binary
+                            multiplication)</a></li>
+                    <li>50. <a href="./assets/50_cp.pdf" target="_blank">Large exponentiation using ETF & Euler
+                            theorem</a></li>
+                    <li>51. <a href="./assets/51_cp.pdf" target="_blank">Large exponentiation using ETF & Euler
+                            (code)</a></li>
                     <li>52. <a href="./assets/52_cp.pdf" target="_blank">Factors and Divisors</a></li>
                     <li>53. <a href="./assets/53_cp.pdf" target="_blank">Prime check and Prime factorization</a></li>
-                    <li>54. <a href="./assets/54_cp.pdf" target="_blank">Sieve algorithm to find the prime no. optimally</a></li>
+                    <li>54. <a href="./assets/54_cp.pdf" target="_blank">Sieve algorithm to find the prime no.
+                            optimally</a></li>
                     <li>55. <a href="./assets/55_cp.pdf" target="_blank">Sieve Variations</a></li>
                     <li>56. <a href="./assets/56_cp.pdf" target="_blank">Moduler Multiplicative Inverse (MMI)</a></li>
                     <li>57. <a href="./assets/57_cp.pdf" target="_blank">Graphs / Trees Intro</a></li>
                     <li>58. <a href="./assets/58_cp.pdf" target="_blank">All the tree / Graph Terminology</a></li>
                     <li>59. <a href="./assets/59_cp.pdf" target="_blank">How to represent Trees / Graph in code</a></li>
                     <li>60. <a href="./assets/60_cp.pdf" target="_blank">Depth First Search (DFS)</a></li>
-                    <li>61. <a href="./assets/61_cp.pdf" target="_blank">How to find connected components & Cycle in graph using DFS</a></li>
+                    <li>61. <a href="./assets/61_cp.pdf" target="_blank">How to find connected components & Cycle in
+                            graph using DFS</a></li>
                     <li>62. <a href="./assets/62_cp.pdf" target="_blank">DFS in Trees (height & depth)</a></li>
                     <li>63. <a href="./assets/63_cp.pdf" target="_blank">Pre-computation using DFS</a></li>
                     <li>64. <a href="./assets/64_cp.pdf" target="_blank">Diameter of a Tree</a></li>
@@ -186,6 +194,8 @@
         const stop = document.getElementById('stop');
         const dark = document.getElementById('dark_mode');
 
+        // const timerWorker = new Worker('timer-worker.js'); // Assuming timer-worker.js is your timer worker script
+
         // Disabling buttons when timer is on
         const disableButtons = () => {
             easy.style.cursor = "not-allowed";
@@ -199,24 +209,43 @@
             hard.style.opacity = "0.5";
         }
 
+        // Function to enable buttons
+        const enableButtons = () => {
+            easy.style.cursor = "pointer";
+            easy.disabled = false;
+            easy.style.opacity = "1";
+            medium.style.cursor = "pointer";
+            medium.disabled = false;
+            medium.style.opacity = "1";
+            hard.style.cursor = "pointer";
+            hard.disabled = false;
+            hard.style.opacity = "1";
+        };
+
         // Alarm
         function playAlarm() {
             let alarm = document.getElementById("alarm");
             alarm.play();
         }
 
+        // Function to stop the alarm
+        function stopAlarm() {
+            let alarm = document.getElementById("alarm");
+            alarm.pause();
+            alarm.currentTime = 0;
+        }
+
         // Dark mode
         let chk = 0;
         dark.addEventListener('click', () => {
-
             let body = document.getElementById("navbar");
             let main_dabba = document.getElementById("main_dabba");
             let timer = document.getElementById("timer");
             let time_show = document.querySelectorAll(".time_showcase");
 
             if (chk == 0) {
-                navbar.style.backgroundColor = "#292929";
-                navbar.style.color = "#f5f5f5";
+                body.style.backgroundColor = "#292929";
+                body.style.color = "#f5f5f5";
 
                 main_dabba.style.backgroundColor = "#181818";
                 timer.style.color = "#f5f5f5";
@@ -225,10 +254,9 @@
                 });
 
                 chk = 1;
-            }
-            else {
-                navbar.style.backgroundColor = "#fff";
-                navbar.style.color = "black";
+            } else {
+                body.style.backgroundColor = "#fff";
+                body.style.color = "black";
 
                 main_dabba.style.backgroundColor = "#f5f5f5";
                 timer.style.color = "#333";
@@ -241,33 +269,31 @@
         })
 
         // Starting Timer
-        easy.addEventListener('click', () => {
-            timerWorker.postMessage({ action: 'start', duration: 10 * 60 }); // Start with 10 minutes for easy mode
+        function startTimer(duration) {
+            timerWorker.postMessage({ action: 'start', duration });
             disableButtons();
-        });
+        }
 
-        medium.addEventListener('click', () => {
-            timerWorker.postMessage({ action: 'start', duration: 15 * 60 }); // Start with 15 minutes for medium mode
-            disableButtons();
-        });
-
-        hard.addEventListener('click', () => {
-            timerWorker.postMessage({ action: 'start', duration: 20 * 60 }); // Start with 20 minutes for hard mode
-            disableButtons();
-        });
+        easy.addEventListener('click', () => startTimer(10 * 60)); // Start with 10 minutes for easy mode
+        medium.addEventListener('click', () => startTimer(15 * 60)); // Start with 15 minutes for medium mode
+        hard.addEventListener('click', () => startTimer(20 * 60)); // Start with 20 minutes for hard mode
 
         stop.addEventListener('click', () => {
             timerWorker.postMessage('stop'); // Stop the timer in the worker
-            location.reload();
+            // Update the UI to show 0:00
+            document.getElementById("timer_showcase").innerHTML = "00:00";
+            enableButtons();
+            stopAlarm(); // Stop the alarm
         });
 
         // Handle messages from the worker
         timerWorker.onmessage = function (event) {
-            if (event.data === "Time's up!") {
+            if (event.data === "Datt ja bhai!") {
                 playAlarm();
             }
             document.getElementById("timer_showcase").innerHTML = event.data;
         };
+
     </script>
 
 
