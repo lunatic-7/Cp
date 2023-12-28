@@ -13,13 +13,17 @@ const int M = 1e9+7;
 int main()
 {
     wasif();
-    int k;
-    cin >> k;
+    int t;
+    cin >> t;
 
-    cout << k << "\n";
-    int n = 10;
+    while (t--)
+    {
+    	int a, b, c;
+    	cin >> a >> b >> c;
 
-    if (sqrt(n) == (int)sqrt(n)) cout << "YES" << "\n";
-    cout << sqrt(n) << "\n";
+    	if (a == b) cout << c << "\n";
+    	else if (a == c) cout << b << "\n";
+    	else if (b == b) cout << a << "\n";
+    }
     return 0;
 }
