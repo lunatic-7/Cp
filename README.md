@@ -1,4 +1,4 @@
-My Competitive Programming Solved Questions 💯:
+My CP (Competitive Programming) Solved Questions 💯:
 
 🙊 Source:
 -> CodeForces (In progress...)  NEWBIE
