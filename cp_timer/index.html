@@ -38,7 +38,15 @@
 
     <nav class="nav" id="navbar">
         <img id="timer_logo" src="./assets/cp_timer.png" alt="cp timer">
-        <i title="Toogle dark mode" id="dark_mode" class="fa-solid fa-circle-half-stroke"></i>
+        <div id="right">
+            <div id="loginSection">
+                <input type="password" id="password" onkeydown="handleEnterKey(event)" />
+            </div>
+            <div id="dataSection" style="display: none;">
+                <p id="wasif">Wasif &#8213;</p>
+            </div>
+            <i title="Toogle dark mode" id="dark_mode" class="fa-solid fa-circle-half-stroke"></i>
+        </div>
     </nav>
     <div id="main_dabba">
         <!-- Make a timer -->
@@ -72,7 +80,7 @@
         <div id="link_papa">
             <div id="link_tg">
                 <h3 id="link_head">Links</h3>
-                <div class="saved">
+                <div class="saved" id="saving" style="display: none;">
                     <input type="text" id="linkTitle" placeholder="title">
                     <input type="url" id="linkUrl" placeholder="url">
                     <button class="pro_btn" onclick="saveLink()"><i class="fa-solid fa-floppy-disk"></i></button>
@@ -185,6 +193,7 @@
 
 
     <script src="app.js"></script>
+    <script src="auth.js"></script>
 
     <script>
 

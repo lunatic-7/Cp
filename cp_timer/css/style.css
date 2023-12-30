@@ -28,6 +28,23 @@
     height: 7vh;
 }
 
+#right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+#dataSection {
+    cursor: pointer;
+}
+
+#password {
+    padding: 1px;
+    width: 7rem;
+    height: 1.3rem;
+}
+
 .fa-circle-half-stroke {
     font-size: 1.5rem;
     cursor: pointer;
