@@ -52,7 +52,7 @@ function displaySavedLinks() {
                 var listItem = document.createElement('li');
                 listItem.innerHTML = `
                     <a href="${link.url}" target="_blank">${link.title}</a>
-                    <button class="pro_btn" onclick="deleteLink(${link.id})"><i class="fa-solid fa-trash"></i></button>
+                    <button class="pro_btn" ${isLoggedIn ? '' : 'style="display: none;"'} onclick="deleteLink(${link.id})"><i class="fa-solid fa-trash"></i></button>
                 `;
                 savedLinksList.appendChild(listItem);
             });
@@ -64,3 +64,9 @@ function displaySavedLinks() {
 window.onload = function() {
     displaySavedLinks();
 };
+
+// Listen for the custom event indicating a change in the loggedIn state
+document.addEventListener('loggedInStateChanged', (event) => {
+    isLoggedIn = event.detail.isLoggedIn;
+    displaySavedLinks();
+});
