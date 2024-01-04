@@ -13,9 +13,15 @@ const int M = 1e9+7;
 int main()
 {
     wasif();
-    int n;
-    cin >> n;
+    ll a, b, s;
+    cin >> a >> b >> s;
 
-    cout << (0 & 1) << (3 & 1) << "\n";
+    ll minStp = abs(a) + abs(b);
+    if (s >= minStp)
+    {
+    	if ((s & 1) == (minStp & 1)) cout << "Yes" << "\n";
+    	else cout << "No" << "\n";
+    }
+    else cout << "No" << "\n";
     return 0;
 }

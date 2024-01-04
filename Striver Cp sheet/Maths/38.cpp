@@ -13,9 +13,12 @@ const int M = 1e9+7;
 int main()
 {
     wasif();
-    int n;
+    string n, r;
     cin >> n;
 
-    cout << (0 & 1) << (3 & 1) << "\n";
+    r = n;
+    reverse(r.begin(), r.end());
+
+    cout << n << r << "\n";
     return 0;
 }
