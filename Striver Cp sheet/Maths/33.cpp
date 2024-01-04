@@ -13,9 +13,10 @@ const int M = 1e9+7;
 int main()
 {
     wasif();
-    int n;
-    cin >> n;
+    double h, l, d;
+    cin >> h >> l;
 
-    cout << 1 % 1 << 1 / 1 << "\n";
+    d = (l*l - h*h) / (2 * h);
+    cout << setprecision(10) << fixed << d << "\n";
     return 0;
 }

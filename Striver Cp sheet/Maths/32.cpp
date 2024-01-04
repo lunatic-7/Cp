@@ -13,9 +13,16 @@ const int M = 1e9+7;
 int main()
 {
     wasif();
-    int n;
-    cin >> n;
+    ll n, m, a;
+    cin >> n >> m >> a;
 
-    cout << 1 % 1 << 1 / 1 << "\n";
+    ll x1, x2;
+    if (n % a == 0) x1 = n / a;
+    else x1 = (n / a) + 1;
+
+    if (m % a == 0) x2 = m / a;
+    else x2 = (m / a) + 1;
+
+    cout << x1 * x2 << "\n";
     return 0;
 }

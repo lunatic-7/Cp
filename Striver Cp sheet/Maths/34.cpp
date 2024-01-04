@@ -13,9 +13,18 @@ const int M = 1e9+7;
 int main()
 {
     wasif();
-    int n;
-    cin >> n;
+    int t;
+    cin >> t;
 
-    cout << 1 % 1 << 1 / 1 << "\n";
+    while (t--)
+    {
+    	int x, y;
+    	cin >> x >> y;
+
+    	if (x == 1 && y != 1) cout << "NO" << "\n";
+    	else if (x == 2 && y > 3) cout << "NO" << "\n";
+    	else if (x == 3 && y > 3) cout << "NO" << "\n";
+    	else cout << "YES" << "\n";
+    }
     return 0;
 }

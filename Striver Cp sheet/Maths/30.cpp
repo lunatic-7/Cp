@@ -16,6 +16,11 @@ int main()
     int n;
     cin >> n;
 
-    cout << 1 % 1 << 1 / 1 << "\n";
+    if(n > 5 && !(n & 1))
+    {
+    	if (n % 4 == 0) cout << (n / 4) - 1 << "\n";
+    	else cout << n / 4 << "\n";
+    }
+    else cout << 0 << "\n";
     return 0;
 }
