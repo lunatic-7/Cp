@@ -16,27 +16,27 @@ int main()
     int n;
     cin >> n;
 
-    int arr[n], ans[n + 1] = {0};
+    ll arr[n], sum = 0;
+
     for (int i = 0; i < n; ++i)
     {
     	cin >> arr[i];
-        ans[arr[i]] = i;
+    	sum += arr[i];
     }
 
-    int query;
-    cin >> query;
-    ll vasy = 0, pety = 0;
+    int chk = sum % (n + 1);
+    if (chk == 0) chk = n + 1;
+    int pro = ((n + 1) - chk) + 1;
+    int cnt = 0;
+    if (pro <= 5) cnt++;
 
-    while (query--)
+    while (pro + (n + 1) <= 5)
     {
-    	int b;
-    	cin >> b;
-
-    	ll vasya = ans[b];
-    	vasy += vasya + 1;
-    	pety += n - vasya;
+    	cnt++;
+    	pro += n + 1;
     }
 
-    cout << vasy << " " << pety << "\n";
+    cout << 5 - cnt << "\n";
+
     return 0;
 }

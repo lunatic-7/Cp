@@ -15,28 +15,26 @@ int main()
     wasif();
     int n;
     cin >> n;
+    unordered_map<string, ll> foot;
 
-    int arr[n], ans[n + 1] = {0};
+    string s;
     for (int i = 0; i < n; ++i)
     {
-    	cin >> arr[i];
-        ans[arr[i]] = i;
+    	cin >> s;
+    	foot[s]++;
     }
 
-    int query;
-    cin >> query;
-    ll vasy = 0, pety = 0;
-
-    while (query--)
+    string winner;
+    ll maxi = -1;
+    for (auto x : foot)
     {
-    	int b;
-    	cin >> b;
-
-    	ll vasya = ans[b];
-    	vasy += vasya + 1;
-    	pety += n - vasya;
+    	if (x.S > maxi)
+    	{
+    		maxi = x.S;
+    		winner = x.F;
+    	}
     }
 
-    cout << vasy << " " << pety << "\n";
+    cout << winner << "\n";
     return 0;
 }

@@ -16,27 +16,28 @@ int main()
     int n;
     cin >> n;
 
-    int arr[n], ans[n + 1] = {0};
+    int arr[n];
+    vector <int> v(n);
+
     for (int i = 0; i < n; ++i)
     {
     	cin >> arr[i];
-        ans[arr[i]] = i;
     }
+    copy(arr, arr + n, v.begin());
 
-    int query;
-    cin >> query;
-    ll vasy = 0, pety = 0;
-
-    while (query--)
+    sort(arr, arr + n);
+    if (arr[0] == arr[1]) cout << "Still Rozdil" << "\n";
+    else 
     {
-    	int b;
-    	cin >> b;
-
-    	ll vasya = ans[b];
-    	vasy += vasya + 1;
-    	pety += n - vasya;
+    	for (int i = 0; i < v.size(); ++i)
+    	{
+    		if (v[i] == arr[0])
+    		{
+    			cout << i + 1 << "\n";
+    			break;
+    		}
+    	}
     }
 
-    cout << vasy << " " << pety << "\n";
     return 0;
 }
