@@ -10,8 +10,6 @@ using namespace std;
 
 const int M = 1e9+7;
 
-// UNSOLVED
-
 int main()
 {
     wasif();
@@ -20,34 +18,36 @@ int main()
 
     while (t--)
     {
-    	int n, H, M;
-    	cin >> n >> H >> M;
-    	pair<int, int> hm[n];
-    	pair<int, int> ans[n];
+        int n, Hr, Mn;
+        cin >> n >> Hr >> Mn;
 
-    	int aasanH = 23 - H;
-    	int aasanM = 60 - M;
-    	for (int i = 0; i < n; ++i)
-    	{
-    		int hr, mn;
-    		cin >> hr >> mn;
-    		hm[i] = {hr, mn};
-    	}
+        int sota = (Hr * 60) + Mn;
 
-    	for (int i = 0; i < n; ++i)
-    	{
-    		ans[i] = {aasanH + hm[i].F, aasanM + hm[i].S};
-    	}
+        vector<int> hm;
+        for (int i = 0; i < n; ++i)
+        {
+            int h, m;
+            cin >> h >> m;
+            int mins = (h * 60) + m; 
+            hm.PB(mins);
+        }
 
-    	for (auto x : ans)
-    	{
-    		// ans[i] = {aasanH + x.F, aasanM + x.S};
-    		cout << x.F << " " << x.S << "\n";
-    	}
-    	cout << "\n";
+        int ans = INT_MAX, k = 0;
+        for (auto x : hm)
+        {
+            if (x - sota >= 0)
+            {
+                ans = min(ans, x - sota);
+            }
+            else
+            {
+                k = x + (1440 - sota);
+                ans = min(ans, k);
+            }
+        }
 
-
-
+        cout << ans / 60 << " " << ans % 60 << "\n";
     }
+
     return 0;
 }
