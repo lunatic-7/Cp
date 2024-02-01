@@ -10,8 +10,6 @@ using namespace std;
 
 const int M = 1e9+7;
 
-// WRONG
-
 int main()
 {
     wasif();
@@ -23,29 +21,20 @@ int main()
     	int n;
     	cin >> n;
 
-    	int arr[n];
+    	int arr[n], ans = 1;
     	for (int i = 0; i < n; ++i)
     	{
     		cin >> arr[i];
     	}
 
-    	int mini = arr[0], maxi = arr[0];
-    	for (int i = 0; i < n; ++i)
+        sort(arr, arr + n);
+    	for (int i = 0; i < n - 1; ++i)
     	{
-    		mini = min(mini, arr[i]);
-    		maxi = max(maxi, arr[i]);
+    		ans = max(ans, abs(arr[i + 1] - arr[i]));
     	}
 
-    	ll miniCt = 0, maxiCt = 0;
-    	for (int i = 0; i < n; ++i)
-    	{
-    		if (arr[i] == mini) miniCt++;
-    		if (arr[i] == maxi) maxiCt++;
-    	}
-
-        if (mini == maxi) cout << miniCt * (miniCt - 1) << "\n";
-    	else cout << (miniCt * maxiCt) * 2 << "\n";
-
+    	if (ans > 1) cout << "NO" << '\n';
+    	else cout << "YES" << '\n';
     }
     return 0;
 }

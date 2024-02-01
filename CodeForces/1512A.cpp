@@ -10,8 +10,6 @@ using namespace std;
 
 const int M = 1e9+7;
 
-// WRONG
-
 int main()
 {
     wasif();
@@ -24,28 +22,26 @@ int main()
     	cin >> n;
 
     	int arr[n];
+    	unordered_map<int, int> ans;
     	for (int i = 0; i < n; ++i)
     	{
     		cin >> arr[i];
+    		ans[arr[i]]++;
     	}
 
-    	int mini = arr[0], maxi = arr[0];
+        int num = 0;
+    	for (auto x : ans)
+    	{
+    		if (x.S == 1)
+    		{
+                num = x.F;
+    		}
+    	}
+
     	for (int i = 0; i < n; ++i)
     	{
-    		mini = min(mini, arr[i]);
-    		maxi = max(maxi, arr[i]);
+    		if (num == arr[i]) cout << i + 1 << "\n";
     	}
-
-    	ll miniCt = 0, maxiCt = 0;
-    	for (int i = 0; i < n; ++i)
-    	{
-    		if (arr[i] == mini) miniCt++;
-    		if (arr[i] == maxi) maxiCt++;
-    	}
-
-        if (mini == maxi) cout << miniCt * (miniCt - 1) << "\n";
-    	else cout << (miniCt * maxiCt) * 2 << "\n";
-
     }
     return 0;
 }
