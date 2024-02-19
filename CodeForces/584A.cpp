@@ -13,16 +13,24 @@ const int M = 1e9+7;
 int main()
 {
     wasif();
-    multimap<string, int> st;
+    ll n, t;
+    cin >> n >> t;
 
-    st.insert({"himan", 3});
-    st.insert({"himan1", 2});
-    st.insert({"himan2", 1});
-    st.insert({"himan", 0});
-
-    for (auto x : st)
+    if (t == 10 && n > 1)
     {
-        cout << x.F << " " << x.S << "\n";
+    	cout << 10;
+    	for (int i = 0; i < n - 2; ++i)
+    	{
+    		cout << 0;
+    	}
     }
+    else if (t < 10)
+    {
+	    for (int i = 0; i < n; ++i)
+	    {
+	    	cout << t;
+	    }    	
+    }
+    else cout << -1 << "\n";
     return 0;
 }

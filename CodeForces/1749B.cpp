@@ -10,8 +10,6 @@ using namespace std;
 
 const int M = 1e9+7;
 
-// WRONG ANSWER
-
 int main()
 {
     wasif();
@@ -20,29 +18,38 @@ int main()
 
     while (t--)
     {
-    	int n;
+    	ll n;
     	cin >> n;
-    	vector<int> hp(n), bdha(n);
+    	vector<ll> a(n), b(n);
 
-    	ll time = 0;
-    	for (int i = 0; i < n; ++i)
-    	{
-    		cin >> hp[i];
-    		time += hp[i];
-    	}
+        for (int i = 0; i < n; ++i)
+        {
+            cin >> a[i];
+        }
+        for (int i = 0; i < n; ++i)
+        {
+            cin >> b[i];
+        }
 
-    	ll maxi = 0, temp = 0;
-    	for (int i = 0; i < n; ++i)
-    	{
-    		cin >> bdha[i];
-            if (i != 0 && i != n - 1) temp = bdha[i] * 2;
-            else temp = bdha[i];
+        ll i = 0, j = n - 1, pts = 0;
 
-    		maxi = max(maxi, temp);
-    		time += temp;
-    	}
+        while (i <= j)
+        {
+            if (b[i] <= b[j])
+            {
+                pts += a[i];
+                if (i != j) a[i + 1] += b[i];
+                i++;
+            }
+            else
+            {
+                pts += a[j];
+                if (i != j) a[j - 1] += b[j];
+                j--;
+            }
+        }
 
-    	cout << time - maxi << "\n";
+        cout << pts << "\n";
     }
     return 0;
 }

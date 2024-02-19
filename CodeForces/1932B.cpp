@@ -13,16 +13,27 @@ const int M = 1e9+7;
 int main()
 {
     wasif();
-    multimap<string, int> st;
+    int t;
+    cin >> t;
 
-    st.insert({"himan", 3});
-    st.insert({"himan1", 2});
-    st.insert({"himan2", 1});
-    st.insert({"himan", 0});
-
-    for (auto x : st)
+    while (t--)
     {
-        cout << x.F << " " << x.S << "\n";
+    	ll n;
+    	cin >> n;
+
+    	vector<ll> v(n);
+    	for (ll i = 0; i < n; ++i)
+    	{
+    		cin >> v[i];
+    	}
+
+    	ll ans = v[0];
+    	for (ll i = 1; i < n; ++i)
+    	{
+    		ans = v[i] * ((ans / v[i]) + 1);
+    	}
+
+    	cout << ans << "\n";
     }
     return 0;
 }

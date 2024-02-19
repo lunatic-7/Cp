@@ -13,16 +13,15 @@ const int M = 1e9+7;
 int main()
 {
     wasif();
-    multimap<string, int> st;
+    int t;
+    cin >> t;
 
-    st.insert({"himan", 3});
-    st.insert({"himan1", 2});
-    st.insert({"himan2", 1});
-    st.insert({"himan", 0});
-
-    for (auto x : st)
+    while (t--)
     {
-        cout << x.F << " " << x.S << "\n";
+    	int n;
+    	cin >> n;
+
+    	cout << ceil(n / 2.0) << " " << ceil(n / 3.0) << "\n";
     }
     return 0;
 }
