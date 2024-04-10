@@ -10,7 +10,7 @@ using namespace std;
 
 const int M = 1e9+7;
 
-// WRONG ANS
+// Wrong
 
 int main()
 {
@@ -18,32 +18,48 @@ int main()
     int t;
     cin >> t;
 
-    while (t--)
+    for (int i = 0; i < t; ++i)
     {
-    	int n, m;
-    	cin >> n >> m;
 
-    	vector<int> fi(n), se(m);
-    	for (int i = 0; i < n; ++i)
-    	{
-    		cin >> fi[i];
-    	}
-    	for (int i = 0; i < m; ++i)
-    	{
-    		cin >> se[i];
-    	}
+        int n, m;
+        cin >> n >> m;
 
-        sort(fi.begin(), fi.end());
-    	sort(se.rbegin(), se.rend());
+        vector<ll> a(n), b(m);
+        for (int i = 0; i < n; ++i)
+        {
+            cin >> a[i];
+        }
+        for (int i = 0; i < m; ++i)
+        {
+            cin >> b[i];
+        }
 
-    	ll sum = 0;
-    	for (int i = 0; i < n; ++i)
-    	{
-    		if (i > m - 1) sum += fi[i];
-    		else sum += se[i];
-    	}
+        sort(a.begin(), a.end());
 
-    	cout << sum << "\n";
+        int k = 0, moti = 0;
+        while (moti < m)
+        {
+            if (a[k] < b[moti] || k == 0)
+            {
+                swap(a[k], b[moti]);
+                k++;
+                if (k == n) k = 0;
+            }
+            else
+            {
+                swap(a[k - 1], b[moti]);
+            }
+            moti++;
+        }
+
+        ll ans = 0;
+        for (int i = 0; i < n; ++i)
+        {
+            ans += a[i];
+        }
+
+        cout << ans << '\n';
     }
+
     return 0;
 }

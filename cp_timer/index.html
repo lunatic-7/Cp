@@ -39,6 +39,9 @@
     <nav class="nav" id="navbar">
         <img id="timer_logo" src="./assets/cp_timer.png" alt="cp timer">
         <div id="right">
+            <div id="app_nav">
+                <a href="#app_dabba" id="app_nav_pro">App: 📱</a>
+            </div>
             <div id="loginSection">
                 <input type="password" id="password" onkeydown="handleEnterKey(event)" />
             </div>
@@ -71,6 +74,10 @@
             <div>
                 <button id="hard" class="timer_box">Hard</button>
                 <span class="time_showcase">20 minutes</span>
+            </div>
+            <div>
+                <button id="very_hard" class="timer_box">Very Hard</button>
+                <span class="time_showcase">30 minutes</span>
             </div>
         </div>
 
@@ -138,7 +145,7 @@
                     <li>41. <a href="./assets/41_cp.pdf" target="_blank">Check if a no. is power of 2</a></li>
                     <li>42. <a href="./assets/42_cp.pdf" target="_blank">XOR (^) Operator</a></li>
                     <li>43. <a href="./assets/43_cp.pdf" target="_blank">Swapping 2 no. using XOR</a></li>
-                    <li>44. <a href="./assets/44_cp.pdf" target="_blank">Bit masking<< /a>
+                    <li>44. <a href="./assets/44_cp.pdf" target="_blank">Bit masking </a></li>
                     <li>45. <a href="./assets/45_cp.pdf" target="_blank">Subset generation using bitmasking</a></li>
                     <li>46. <a href="./assets/46_cp.pdf" target="_blank">GCD & LCM</a></li>
                     <li>47. <a href="./assets/47_cp.pdf" target="_blank">Binary exponentiation (recursive method)</a>
@@ -189,6 +196,18 @@
                 </ul>
             </div>
         </div>
+
+    </div>
+
+    <div id="second_dabba">
+        <!-- App -->
+        <h3 id="app_head">Download the Codeforces Analysis App</h3>
+        <a href="./assets/cp_app.apk">
+            <div id="app_dabba">
+                <img class="app_img" src="./assets/app_pic.JPG" alt="app">
+                <img class="app_img" id="app_img2" src="./assets/app_pic2.JPG" alt="app">
+            </div>
+        </a>
     </div>
 
 
@@ -200,6 +219,7 @@
         const easy = document.getElementById('easy');
         const medium = document.getElementById('medium');
         const hard = document.getElementById('hard');
+        const very_hard = document.getElementById('very_hard');
         const stop = document.getElementById('stop');
         const dark = document.getElementById('dark_mode');
 
@@ -216,6 +236,9 @@
             hard.style.cursor = "not-allowed";
             hard.disabled = true;
             hard.style.opacity = "0.5";
+            very_hard.style.cursor = "not-allowed";
+            very_hard.disabled = true;
+            very_hard.style.opacity = "0.5";
         }
 
         // Function to enable buttons
@@ -229,6 +252,10 @@
             hard.style.cursor = "pointer";
             hard.disabled = false;
             hard.style.opacity = "1";
+            very_hard.style.cursor = "pointer";
+            very_hard.disabled = false;
+            very_hard.style.opacity = "1";
+            
         };
 
         // Alarm
@@ -249,6 +276,7 @@
         dark.addEventListener('click', () => {
             let body = document.getElementById("navbar");
             let main_dabba = document.getElementById("main_dabba");
+            let second_dabba = document.getElementById("second_dabba");
             let timer = document.getElementById("timer");
             let time_show = document.querySelectorAll(".time_showcase");
 
@@ -257,6 +285,7 @@
                 body.style.color = "#f5f5f5";
 
                 main_dabba.style.backgroundColor = "#181818";
+                second_dabba.style.backgroundColor = "#353935";
                 timer.style.color = "#f5f5f5";
                 time_show.forEach(time => {
                     time.style.color = '#f5f5f5';
@@ -268,6 +297,7 @@
                 body.style.color = "black";
 
                 main_dabba.style.backgroundColor = "#f5f5f5";
+                second_dabba.style.backgroundColor = "#f5f5f5";
                 timer.style.color = "#333";
                 time_show.forEach(time => {
                     time.style.color = '#777';
@@ -286,6 +316,7 @@
         easy.addEventListener('click', () => startTimer(10 * 60)); // Start with 10 minutes for easy mode
         medium.addEventListener('click', () => startTimer(15 * 60)); // Start with 15 minutes for medium mode
         hard.addEventListener('click', () => startTimer(20 * 60)); // Start with 20 minutes for hard mode
+        very_hard.addEventListener('click', () => startTimer(30 * 60)); // Start with 30 minutes for very hard mode
 
         stop.addEventListener('click', () => {
             timerWorker.postMessage('stop'); // Stop the timer in the worker
