@@ -12,16 +12,33 @@ void showVect(vector<int> a) {for(auto it : a) cout << it << " "; cout << "\n";}
 
 const int M = 1e9+7;
 
+// SEEN
 int main()
 {
     wasif();
-    int n = 234;
-    string no;
-    cin >> no;
-    string s = to_string(n);
-    int sz = s.size();
-    cout << no << "\n";
-    cout << sz << "\n";
-    cout << s[2] - '0' << "\n";
+    int t;
+    cin >> t;
+
+    while (t--)
+    {
+    	int n;
+    	cin >> n;
+
+    	string s;
+    	cin >> s;
+
+    	vector<int> alpha(26, 0);
+    	ll moves = 0;
+
+    	for (int i = 0; i < n; ++i)
+    	{
+    		if (!alpha[s[i] - '0' - 49])
+    		{
+    			alpha[s[i] - '0' - 49]++;
+    			moves += n - i;
+    		}
+    	}
+    	cout << moves << "\n";
+    }
     return 0;
 }

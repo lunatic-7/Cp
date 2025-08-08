@@ -15,13 +15,22 @@ const int M = 1e9+7;
 int main()
 {
     wasif();
-    int n = 234;
-    string no;
-    cin >> no;
-    string s = to_string(n);
-    int sz = s.size();
-    cout << no << "\n";
-    cout << sz << "\n";
-    cout << s[2] - '0' << "\n";
+    int t;
+    cin >> t;
+
+    while (t--)
+    {
+    	int n;
+    	cin >> n;
+
+    	int ans = 0;
+    	while (n > 0)
+    	{
+    		ans += n % 10;
+    		n /= 10;
+    	}
+
+    	cout << ans << "\n";
+    }
     return 0;
 }

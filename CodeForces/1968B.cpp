@@ -15,13 +15,29 @@ const int M = 1e9+7;
 int main()
 {
     wasif();
-    int n = 234;
-    string no;
-    cin >> no;
-    string s = to_string(n);
-    int sz = s.size();
-    cout << no << "\n";
-    cout << sz << "\n";
-    cout << s[2] - '0' << "\n";
+    int t;
+    cin >> t;
+
+    while (t--)
+    {
+    	int n, m;
+    	cin >> n >> m;
+
+    	string a, b;
+    	cin >> a >> b;
+
+    	int i = 0, j = 0;
+
+    	while (j < m)
+    	{
+    		if (a[i] == b[j])
+    		{
+    			i++;
+    		}
+    		j++;
+    	}
+
+    	cout << i << "\n";
+    }
     return 0;
 }

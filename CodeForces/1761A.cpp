@@ -15,13 +15,16 @@ const int M = 1e9+7;
 int main()
 {
     wasif();
-    int n = 234;
-    string no;
-    cin >> no;
-    string s = to_string(n);
-    int sz = s.size();
-    cout << no << "\n";
-    cout << sz << "\n";
-    cout << s[2] - '0' << "\n";
+    int t;
+    cin >> t;
+
+    while (t--)
+    {
+    	ll n, a, b;
+    	cin >> n >> a >> b;
+
+    	if (a + b <= n - 2 || a + b == 2*n) cout << "YES" << "\n";
+    	else cout << "NO" << "\n";
+    }
     return 0;
 }

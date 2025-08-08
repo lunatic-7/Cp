@@ -15,13 +15,25 @@ const int M = 1e9+7;
 int main()
 {
     wasif();
-    int n = 234;
-    string no;
-    cin >> no;
-    string s = to_string(n);
-    int sz = s.size();
-    cout << no << "\n";
-    cout << sz << "\n";
-    cout << s[2] - '0' << "\n";
+    int t;
+    cin >> t;
+
+    while (t--)
+    {
+    	int x;
+    	cin >> x;
+
+        int ind = 0, ans = 0;
+    	for (int i = 1; i < x; ++i)
+    	{
+    		if ((__gcd(x, i) + i) > ans)
+    		{
+    			ans = __gcd(x, i) + i;
+    			ind = i;
+    		}
+    	}
+
+    	cout << ind << "\n";
+    }
     return 0;
 }

@@ -15,13 +15,22 @@ const int M = 1e9+7;
 int main()
 {
     wasif();
-    int n = 234;
-    string no;
-    cin >> no;
-    string s = to_string(n);
-    int sz = s.size();
-    cout << no << "\n";
-    cout << sz << "\n";
-    cout << s[2] - '0' << "\n";
+    int t;
+    cin >> t;
+
+    while(t--)
+    {
+    	string st;
+    	cin >> st;
+    	string cf = "codeforces";
+
+        int cnt = 0;
+    	for (int i = 0; i < cf.size(); ++i)
+    	{
+    		if (st[i] != cf[i]) cnt++;
+    	}
+
+    	cout << cnt << "\n";
+    }
     return 0;
 }
