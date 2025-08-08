@@ -20,22 +20,22 @@ int main()
 
     while (t--)
     {
-    	ll n;
+    	int n;
     	cin >> n;
 
-    	ll x = 1, y = n - 1;
+    	string s;
+    	cin >> s;
 
-    	for (int i = 2; i * i <= n; ++i)
+    	ll ini = count(s.begin(), s.end(), '1');
+    	ll ans = 0;
+
+    	for (int i = 0; i < n; ++i)
     	{
-    		if (n % i == 0)
-    		{
-    			x = n / i;
-    			y = n - x;
-    			break;
-    		}
+    		if (s[i] == '1') ans += ini - 1;
+    		else ans += ini + 1;
     	}
 
-    	cout << x << " " << y << "\n";
+    	cout << ans << "\n";
     }
 
     return 0;

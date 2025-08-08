@@ -8,35 +8,64 @@ using namespace std;
 #define S second
 #define wasif() ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 
-const int M = 1e9+7;
+void showVect(vector<int> a) {for(auto it : a) cout << it << " "; cout << "\n";}
 
-// UNSOLVED
+const int M = 1e9+7;
 
 int main()
 {
     wasif();
-    ll t;
+    int t;
     cin >> t;
 
     while (t--)
     {
-    	ll x, n;
-    	cin >> x >> n;
+    	ll xo, n;
+    	cin >> xo >> n;
 
-    	if ((x & 1))
+    	ll ans = 0;
+
+    	if ((xo & 1)) // xo odd
     	{
-    		if (n % 4 == 0) cout << x << "\n";
-    		else if (n % 4 == 1) cout << (x + 1) + ((n / 4) * 4) << "\n";
-    		else if (n % 4 == 2) cout << (x - 1) + ((n / 4) * 4) << "\n";
-    		else if (n % 4 == 3) cout << -1 * ((x + 4) + ((n / 4) * 4)) << "\n";
+    		if ((n & 1)) // n odd
+    		{
+    			if ((n - 1) % 2 == (n - 1) % 4) // n - 1 div by 2 and 4
+    			{ 
+                	ans = xo + n;
+    			}
+    			else ans = (xo - 1) - n;
+    		}
+    		else
+    		{
+    			if (n % 2 == n % 4) // n div by 2 and 4
+    			{ 
+                	ans = xo;
+    			}
+    			else ans = xo - 1;
+    		}
     	}
-    	else
+    	else  // xo even
     	{
-    		if (n % 4 == 0) cout << x << "\n";
-    		else if (n % 4 == 1) cout << (x - 1) + ((n / 4) * 4) << "\n";
-    		else if (n % 4 == 2) cout << (x + 1) + ((n / 4) * 4) << "\n";
-    		else if (n % 4 == 3) cout << (x + 4) + ((n / 4) * 4) << "\n";
+    		if ((n & 1)) // n odd
+    		{
+    			if ((n - 1) % 2 == (n - 1) % 4) // n - 1 div by 2 and 4
+    			{ 
+                	ans = xo - n;
+    			}
+    			else ans = (xo + 1) + n;
+    		}
+    		else
+    		{
+    			if (n % 2 == n % 4) // n div by 2 and 4
+    			{ 
+                	ans = xo;
+    			}
+    			else ans = xo + 1;
+    		}
     	}
+
+    	cout << ans << "\n";
     }
+
     return 0;
 }

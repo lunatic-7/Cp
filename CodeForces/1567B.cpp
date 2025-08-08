@@ -12,6 +12,15 @@ void showVect(vector<int> a) {for(auto it : a) cout << it << " "; cout << "\n";}
 
 const int M = 1e9+7;
 
+ll xortill(ll xorkar)
+{
+	ll a = xorkar % 4;
+	if (a == 0) return xorkar;
+	else if (a == 1) return 1;
+	else if (a == 2) return xorkar + 1;
+	else return 0;
+}
+
 int main()
 {
     wasif();
@@ -20,23 +29,14 @@ int main()
 
     while (t--)
     {
-    	ll n;
-    	cin >> n;
+    	ll a, b;
+    	cin >> a >> b;
 
-    	ll x = 1, y = n - 1;
+    	ll xori = xortill(a - 1);
 
-    	for (int i = 2; i * i <= n; ++i)
-    	{
-    		if (n % i == 0)
-    		{
-    			x = n / i;
-    			y = n - x;
-    			break;
-    		}
-    	}
-
-    	cout << x << " " << y << "\n";
+    	if (xori == b) cout << a << "\n";
+    	else if ((xori ^ b) != a) cout << a + 1 << "\n";
+    	else cout << a + 2 << "\n";
     }
-
     return 0;
 }
