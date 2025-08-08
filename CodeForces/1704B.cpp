@@ -15,39 +15,40 @@ const int M = 1e9+7;
 int main()
 {
     wasif();
-    ll t;
+    int t;
     cin >> t;
 
     while (t--)
     {
-    	ll n, x;
-    	cin >> n >> x;
+        ll n, x;
+        cin >> n >> x;
+        vector<ll> arr(n);
 
-    	vector<ll> a(n);
-    	for (int i = 0; i < n; ++i)
-    	{
-    		cin >> a[i];
-    	}
+        for (ll i = 0; i < n; ++i)
+        {
+        	cin >> arr[i];
+        }
 
-    	ll p_min = a[0] - x, p_max = x + a[0];
-    	ll chng = 0;
+        ll lower, upper;
+        ll ans = 0;
+        pair<ll, ll> range = {arr[0] - x, arr[0] + x};
 
-    	for (int i = 1; i < n; ++i)
-    	{
-    		ll n_min = a[i] - x;
-    		ll n_max = x + a[i];
+        for (ll i = 0; i < n; ++i)
+        {
+        	lower = arr[i] - x;
+        	upper = arr[i] + x;
 
-    		if (n_min >= p_min && n_min <= p_max) continue;
-    		else if (n_max >= p_min && n_max <= p_max) continue;
-    		else
-    		{
-    			p_min = n_min;
-    			p_max = n_max;
-    			chng++;    			
-    		}             
-    	}
+        	range = {max(range.F, lower), min(range.S, upper)};
+        	if (range.S < range.F)
+        	{
+        		range.F = lower;
+        		range.S = upper;
+        		ans++;
+        	}
+        }
 
-    	cout << chng << "\n";
+        cout << ans << "\n";
     }
+
     return 0;
 }

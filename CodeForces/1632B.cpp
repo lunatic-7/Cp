@@ -23,20 +23,29 @@ int main()
     	ll n;
     	cin >> n;
 
-    	ll x = 1, y = n - 1;
+    	n--;  // yha tk permutation jyga
+    	ll msb = log2(n);
+    	ll maxxor = pow(2, msb);
 
-    	for (int i = 2; i * i <= n; ++i)
+    	vector<ll> ans;
+
+    	for (int i = 1; i < maxxor; ++i)
     	{
-    		if (n % i == 0)
-    		{
-    			x = n / i;
-    			y = n - x;
-    			break;
-    		}
+    		ans.PB(i);
     	}
 
-    	cout << x << " " << y << "\n";
-    }
+    	ans.PB(0);
 
+    	for (int i = maxxor; i <= n; ++i)
+    	{
+    		ans.PB(i);
+    	}
+
+    	for (int i = 0; i < ans.size(); ++i)
+    	{
+    		cout << ans[i] << " ";
+    	}
+    	cout << "\n";
+    }
     return 0;
 }
