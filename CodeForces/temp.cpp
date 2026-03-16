@@ -15,13 +15,9 @@ const int M = 1e9+7;
 int main()
 {
     wasif();
-    int n = 234;
-    string no;
-    cin >> no;
-    string s = to_string(n);
-    int sz = s.size();
-    cout << no << "\n";
-    cout << sz << "\n";
-    cout << s[2] - '0' << "\n";
+    string s;
+    cin >> s;
+
+    cout << "Hello " << s << "\n";
     return 0;
 }
