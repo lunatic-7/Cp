@@ -12,69 +12,49 @@ void showVect(vector<int> a) {for(auto it : a) cout << it << " "; cout << "\n";}
 void showVectll(vector<ll> a) {for(auto it : a) cout << it << " "; cout << "\n";}
  
 const int M = 1e9+7;
+ 
 
-vector<int> nums = {10,9,1,1,1,2,3,1};
-
-void merge(int l, int r, int mid)
+vector<int> sortColors(vector<int> &nums)
 {
-	// Dono sorted array create krne hai
-	int l_sz = mid - l + 1;
-	int L[l_sz + 1];
+	vector<vector<int>> radix(3, vector<int>(3));
 
-	int r_sz = r - mid;
-	int R[r_sz + 1];
-
-	for (int i = 0; i < l_sz; ++i)
+	for (int i = 0; i < 3; ++i)
 	{
-		L[i] = nums[i + l];
-	}
-
-	for (int i = 0; i < r_sz; ++i)
-	{
-		R[i] = nums[i + mid + 1];
-	}
-
-	L[l_sz] = R[r_sz] = INT_MAX;
-
-	// Dono sorted ko 1 sorted mai merge krna hai
-	int l_i = 0, r_i = 0;
-	for (int i = l; i <= r; ++i)
-	{
-		if (L[l_i] <= R[r_i])
+		vector<int> temp;
+		for (int j = 0; j < nums.size(); ++j)
 		{
-			nums[i] = L[l_i];
-			l_i++;
+			if (nums[j] == i) temp.PB(nums[j]);
 		}
-		else
+		radix[i] = temp;
+	}
+
+	// for (int i = 0; i < nums.size(); ++i)
+	// {
+	// 	radix[nums[i]].PB(nums[i]);
+	// }
+
+
+	int k = 0;
+	for (int i = 0; i < radix.size(); ++i)
+	{
+		for (int j = 0; j < radix[i].size(); ++j)
 		{
-			nums[i] = R[r_i];
-			r_i++;
+			nums[k] = radix[i][j];
+			k++;
 		}
 	}
-}
 
-
-void mergeSort(int l, int r)
-{
-	if (l == r) return;
-	int mid = (l + r)/ 2;
-	mergeSort(l, mid);
-	mergeSort(mid + 1, r);
-
-	merge(l, r, mid);
-}
-
-vector<int> sortArray(vector<int>& nums) {
-	mergeSort(0, nums.size() - 1);
 	return nums;
 }
 
 int main()
 {
     wasif();
-   	
-   	vector<int> ans = sortArray(nums);
-   	showVect(ans);
+    // RADIX SORT
+    vector<int> nums = {1,0,1,2};
+    vector<int> ans = sortColors(nums);
+
+    showVect(ans);
 
     return 0;
 }
