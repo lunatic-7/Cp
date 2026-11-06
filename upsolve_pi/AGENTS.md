@@ -15,7 +15,7 @@ Goal: make sure old problems actually stuck, and update confidence from evidence
 
 **Settings** (change the numbers here to tune it):
 
-| confidence | due after (days since `last reviewed`) |
+| confidence | days until next review |
 |---|---|
 | shaky | 7 |
 | okay | 14 |
@@ -23,15 +23,19 @@ Goal: make sure old problems actually stuck, and update confidence from evidence
 
 Max questions per exam: 7. Max shaky questions in one exam: 5.
 
+`next due` = `last reviewed` plus the number for the row's confidence. If I change these numbers, recompute `next due` for every row and show me the result before writing.
+
+**Dates:** compute every date with a shell or Python command, never in your head. Show me the computed dates whenever you propose a write.
+
 **Exam check** (after my problem or doubt is done):
 1. If the `last exam` line near the top of cp-history.md is today's date, stop. Say nothing about reviews.
-2. Find due rows: days since `last reviewed` is at least the number for the row's confidence. A row logged today is never due.
+2. Find due rows: rows whose `next due` date is today or earlier (dates are ISO, so they compare as plain text). List each due row by name with its `next due` before counting, and count the list. Do not count from memory.
 3. If no rows are due, stop. Say nothing about reviews.
 4. Otherwise say one line: "Exam due: N questions (x shaky, y okay, z solid). Start now or skip today?" If I skip, do not ask again today, and record the skip (see Recording).
 5. If I say "exam" at any time, run the exam check, and run the exam if one is due and none has happened today.
 
 **Choosing questions** (up to 7):
-- Rank due rows: shaky first, then okay, then solid. Within a level, most overdue first (days past its due number).
+- Rank due rows: shaky first, then okay, then solid. Within a level, earliest `next due` first.
 - Take up to 5 shaky. Fill the remaining slots with okay, then solid. If fewer than 2 non-shaky rows are due, extra shaky rows may fill the gap.
 - Rows not picked stay due and carry over to the next exam.
 - Example: 10 rows due (5 shaky, 5 okay) gives 5 shaky + 2 okay.
@@ -55,7 +59,7 @@ Max questions per exam: 7. Max shaky questions in one exam: 5.
 - Wrong or "I don't know": down one level (shaky stays shaky).
 - Because a row moves only one level per exam, reaching `solid` always takes correct answers on separate days.
 
-**Recording:** after the last question (or when I stop early), show one block with: every confidence change, `last reviewed` set to today for each row asked, and the line `last exam: <today's date>` (add ` (skipped)` if I skipped). A partial exam counts as today's exam. Wait for my okay before writing.
+**Recording:** after the last question (or when I stop early), show one block with: every confidence change, `last reviewed` set to today for each row asked, `next due` recomputed as today plus the number for that row's new confidence, and the line `last exam: <today's date>` (add ` (skipped)` if I skipped). A partial exam counts as today's exam. Wait for my okay before writing.
 
 ## When I bring a problem
 I will paste the statement, constraints, my idea or code, and the verdict (WA on test N, TLE, or never found the idea).
@@ -82,11 +86,12 @@ I will paste the statement, constraints, my idea or code, and the verdict (WA on
 
 ## Logging
 At the end of each problem, propose one line for cp-history.md:
-`date | problem/source | topic(s) | root cause | confidence after | suggestions | example | last reviewed`
+`date | problem/source | topic(s) | root cause | confidence after | suggestions | example | last reviewed | next due`
 - `root cause`: start with the failure tag, for example `[constraint] ...`.
 - `suggestions`: one habit written as "when I see X, do Y".
 - `example`: one tiny reminder pattern from the problem.
 - `last reviewed`: today's date when logged.
+- `next due`: `last reviewed` plus the Settings number for `confidence after`.
 - `confidence after` at logging: `shaky` if I needed H3, H4, or "just show me"; `okay` if I got there with H1 or H2, or on my own after reconstructing my idea. Never `solid` at logging.
 - Never use the `|` character inside a field. Write `abs(a[i]-x)` instead of `|a[i]-x|`.
 
