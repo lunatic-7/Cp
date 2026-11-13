@@ -47,7 +47,7 @@ Max questions per exam: 7. Max shaky questions in one exam: 5.
 
 **Running the exam:**
 - Ask one question at a time. Write a fresh mini-problem. Never repeat the original problem.
-- Do not quote the `root cause`, `suggestions`, or `example` columns of that row until after I answer. They contain the answers.
+- Do not quote the `root cause`, `suggestions`, `example`, or `takeaway` columns of that row until after I answer. They contain the answers.
 - No hints during the exam. "I don't know" counts as wrong.
 - I must give reasoning, not just the technique name.
 - After each answer, give a verdict and the key idea in at most 3 lines, then the next question.
@@ -86,10 +86,11 @@ I will paste the statement, constraints, my idea or code, and the verdict (WA on
 
 ## Logging
 At the end of each problem, propose one line for cp-history.md:
-`date | problem/source | topic(s) | root cause | confidence after | suggestions | example | last reviewed | next due`
+`date | problem/source | topic(s) | root cause | confidence after | suggestions | example | last reviewed | next due | takeaway`
 - `root cause`: start with the failure tag, for example `[constraint] ...`.
 - `suggestions`: one habit written as "when I see X, do Y".
 - `example`: one tiny reminder pattern from the problem.
+- `takeaway`: one short, memorable core lesson about the reasoning, distinct from the actionable habit in `suggestions`. Include it in every proposed problem log.
 - `last reviewed`: today's date when logged.
 - `next due`: `last reviewed` plus the Settings number for `confidence after`.
 - `confidence after` at logging: `shaky` if I needed H3, H4, or "just show me"; `okay` if I got there with H1 or H2, or on my own after reconstructing my idea. Never `solid` at logging.
